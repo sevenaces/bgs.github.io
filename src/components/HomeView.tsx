@@ -17,14 +17,13 @@ export function HomeView({ meetups, onExploreGames, onOpenJoin, onExploreMeetups
     <div id="home-view" className="max-w-3xl mx-auto space-y-9 animate-in fade-in duration-300">
       {/* Hero Welcome Section */}
       <section className="pt-2 pb-2">
-        <div className="flex items-center gap-2 text-xs text-neutral-500 uppercase tracking-wider mb-3">
-          <MapPin className="w-3.5 h-3.5 text-neutral-700" />
-          <span>North Bengaluru • Near Hebbal</span>
-        </div>
-
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 font-sans mb-3">
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 font-sans mb-1.5">
           Welcome to Board Game Society! 🎲
         </h2>
+        <div className="flex items-center gap-1.5 text-sm text-neutral-500 font-medium mb-3">
+          <MapPin className="w-4 h-4 text-neutral-400" />
+          <span>North Bengaluru • Near Hebbal</span>
+        </div>
 
         <p className="text-base sm:text-lg text-neutral-700 leading-relaxed mb-6 font-normal">
           We gather weekly to play board games. Whether you&apos;re a complete beginner or a seasoned strategist, there&apos;s a seat at the table for you. Open to ages 18+. No experience required. Bring your enthusiasm, learn new games, and let&apos;s roll!
