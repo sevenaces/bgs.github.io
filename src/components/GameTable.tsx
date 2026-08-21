@@ -15,7 +15,7 @@ export function GameTable({ games, onSelect }: GameTableProps) {
     <div className="bg-white rounded border border-neutral-200 overflow-hidden" id="games-table-container">
       <div className="overflow-x-auto">
         <table className="w-full text-left text-xs text-neutral-700" id="games-table">
-          <thead className="bg-neutral-50 border-b border-neutral-200 text-neutral-500 uppercase font-mono text-[10px] tracking-wider">
+          <thead className="bg-neutral-50 border-b border-neutral-200 text-neutral-500 uppercase text-[10px] tracking-wider">
             <tr>
               <th className="py-2.5 px-3.5 w-10 text-center font-medium">#</th>
               <th className="py-2.5 px-3.5 font-medium">Game Title</th>
@@ -57,7 +57,7 @@ export function GameTable({ games, onSelect }: GameTableProps) {
                   className="hover:bg-neutral-50 transition-colors cursor-pointer group"
                 >
                   {/* Row Number */}
-                  <td className="py-2.5 px-3.5 text-center text-neutral-400 font-mono text-[11px]">
+                  <td className="py-2.5 px-3.5 text-center text-neutral-400 text-[11px]">
                     {idx + 1}
                   </td>
 
@@ -82,7 +82,7 @@ export function GameTable({ games, onSelect }: GameTableProps) {
                           {game.name}
                         </span>
                         {game.categories && game.categories.length > 0 && (
-                          <span className="text-[10px] font-mono text-neutral-400 block uppercase">
+                          <span className="text-[10px] text-neutral-400 block uppercase">
                             {game.categories.slice(0, 2).join(', ')}
                           </span>
                         )}
@@ -93,7 +93,7 @@ export function GameTable({ games, onSelect }: GameTableProps) {
                   {/* Owner */}
                   <td className="py-2.5 px-3.5">
                     <div className="flex flex-col items-start gap-0.5">
-                      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-neutral-50 text-neutral-900 border border-neutral-200">
+                      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-medium bg-neutral-50 text-neutral-900 border border-neutral-200">
                         <span className={`w-1.5 h-1.5 rounded-full ${ownerDotColor}`} />
                         {game.owner}
                       </span>
@@ -106,7 +106,7 @@ export function GameTable({ games, onSelect }: GameTableProps) {
                   </td>
 
                   {/* Players */}
-                  <td className="py-2.5 px-3.5 whitespace-nowrap font-mono text-[11px] text-neutral-600">
+                  <td className="py-2.5 px-3.5 whitespace-nowrap text-[11px] text-neutral-600">
                     <span className="inline-flex items-center gap-1">
                       <Users className="w-3 h-3 text-neutral-400" />
                       {players}
@@ -114,7 +114,7 @@ export function GameTable({ games, onSelect }: GameTableProps) {
                   </td>
 
                   {/* Duration */}
-                  <td className="py-2.5 px-3.5 whitespace-nowrap font-mono text-[11px] text-neutral-600">
+                  <td className="py-2.5 px-3.5 whitespace-nowrap text-[11px] text-neutral-600">
                     <span className="inline-flex items-center gap-1">
                       <Clock className="w-3 h-3 text-neutral-400" />
                       {duration}
@@ -122,19 +122,19 @@ export function GameTable({ games, onSelect }: GameTableProps) {
                   </td>
 
                   {/* Year */}
-                  <td className="py-2.5 px-3.5 text-center text-neutral-500 font-mono text-[11px]">
+                  <td className="py-2.5 px-3.5 text-center text-neutral-500 text-[11px]">
                     {game.yearPublished || '—'}
                   </td>
 
                   {/* Rating */}
                   <td className="py-2.5 px-3.5 text-center">
                     {game.bggRating ? (
-                      <span className="inline-flex items-center gap-1 font-mono font-semibold text-neutral-800 text-[11px]">
+                      <span className="inline-flex items-center gap-1 font-semibold text-neutral-800 text-[11px]">
                         <Star className="w-2.5 h-2.5 fill-amber-400 text-amber-400" />
                         {game.bggRating}
                       </span>
                     ) : (
-                      <span className="text-neutral-300 font-mono text-xs">—</span>
+                      <span className="text-neutral-300 text-xs">—</span>
                     )}
                   </td>
 
@@ -146,7 +146,7 @@ export function GameTable({ games, onSelect }: GameTableProps) {
                         target="_blank"
                         rel="noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1 text-[11px] font-mono text-neutral-400 hover:text-neutral-900 transition-colors p-1"
+                        className="inline-flex items-center gap-1 text-[11px] text-neutral-400 hover:text-neutral-900 transition-colors p-1"
                         title="BoardGameGeek link"
                       >
                         BGG

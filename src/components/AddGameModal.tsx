@@ -120,7 +120,7 @@ export function AddGameModal({ isOpen, onClose, onAddGame }: AddGameModalProps) 
               <button
                 type="button"
                 onClick={() => setOwner('parag')}
-                className={`py-1.5 px-2 rounded border text-center font-mono text-[11px] font-medium transition-all cursor-pointer ${
+                className={`py-1.5 px-2 rounded border text-center text-[11px] font-medium transition-all cursor-pointer ${
                   owner === 'parag'
                     ? 'bg-neutral-900 text-white border-neutral-900'
                     : 'bg-white border-neutral-200 text-neutral-600 hover:bg-neutral-50'
@@ -131,7 +131,7 @@ export function AddGameModal({ isOpen, onClose, onAddGame }: AddGameModalProps) 
               <button
                 type="button"
                 onClick={() => setOwner('dharitri')}
-                className={`py-1.5 px-2 rounded border text-center font-mono text-[11px] font-medium transition-all cursor-pointer ${
+                className={`py-1.5 px-2 rounded border text-center text-[11px] font-medium transition-all cursor-pointer ${
                   owner === 'dharitri'
                     ? 'bg-neutral-900 text-white border-neutral-900'
                     : 'bg-white border-neutral-200 text-neutral-600 hover:bg-neutral-50'
@@ -142,7 +142,7 @@ export function AddGameModal({ isOpen, onClose, onAddGame }: AddGameModalProps) 
               <button
                 type="button"
                 onClick={() => setOwner('other')}
-                className={`py-1.5 px-2 rounded border text-center font-mono text-[11px] font-medium transition-all cursor-pointer ${
+                className={`py-1.5 px-2 rounded border text-center text-[11px] font-medium transition-all cursor-pointer ${
                   owner === 'other'
                     ? 'bg-neutral-900 text-white border-neutral-900'
                     : 'bg-white border-neutral-200 text-neutral-600 hover:bg-neutral-50'
@@ -181,36 +181,36 @@ export function AddGameModal({ isOpen, onClose, onAddGame }: AddGameModalProps) 
           {/* Players & Playtime */}
           <div className="grid grid-cols-3 gap-2">
             <div>
-              <label className="block font-medium text-neutral-800 mb-1 font-mono text-[11px]">Min Players</label>
+              <label className="block font-medium text-neutral-800 mb-1 text-[11px]">Min Players</label>
               <input
                 type="number"
                 min="1"
                 max="99"
                 value={minPlayers}
                 onChange={(e) => setMinPlayers(e.target.value)}
-                className="w-full px-2.5 py-1.5 text-xs bg-neutral-50 border border-neutral-200 rounded font-mono"
+                className="w-full px-2.5 py-1.5 text-xs bg-neutral-50 border border-neutral-200 rounded"
               />
             </div>
             <div>
-              <label className="block font-medium text-neutral-800 mb-1 font-mono text-[11px]">Max Players</label>
+              <label className="block font-medium text-neutral-800 mb-1 text-[11px]">Max Players</label>
               <input
                 type="number"
                 min="1"
                 max="99"
                 value={maxPlayers}
                 onChange={(e) => setMaxPlayers(e.target.value)}
-                className="w-full px-2.5 py-1.5 text-xs bg-neutral-50 border border-neutral-200 rounded font-mono"
+                className="w-full px-2.5 py-1.5 text-xs bg-neutral-50 border border-neutral-200 rounded"
               />
             </div>
             <div>
-              <label className="block font-medium text-neutral-800 mb-1 font-mono text-[11px]">Play Time (min)</label>
+              <label className="block font-medium text-neutral-800 mb-1 text-[11px]">Play Time (min)</label>
               <input
                 type="number"
                 min="5"
                 step="5"
                 value={playingTime}
                 onChange={(e) => setPlayingTime(e.target.value)}
-                className="w-full px-2.5 py-1.5 text-xs bg-neutral-50 border border-neutral-200 rounded font-mono"
+                className="w-full px-2.5 py-1.5 text-xs bg-neutral-50 border border-neutral-200 rounded"
               />
             </div>
           </div>
@@ -234,7 +234,7 @@ export function AddGameModal({ isOpen, onClose, onAddGame }: AddGameModalProps) 
                 value={bggId}
                 onChange={(e) => setBggId(e.target.value)}
                 placeholder="e.g. 13"
-                className="w-full px-2.5 py-1.5 text-xs bg-neutral-50 border border-neutral-200 rounded font-mono"
+                className="w-full px-2.5 py-1.5 text-xs bg-neutral-50 border border-neutral-200 rounded"
               />
             </div>
           </div>

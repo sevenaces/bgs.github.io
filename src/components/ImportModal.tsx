@@ -76,7 +76,7 @@ export function ImportModal({ isOpen, onClose, onImport }: ImportModalProps) {
               <button
                 type="button"
                 onClick={() => setDefaultOwner('dharitri')}
-                className={`py-1.5 px-3 rounded border font-mono text-xs cursor-pointer transition-colors ${
+                className={`py-1.5 px-3 rounded border text-xs cursor-pointer transition-colors ${
                   defaultOwner === 'dharitri'
                     ? 'bg-neutral-900 text-white border-neutral-900'
                     : 'bg-white border-neutral-200 text-neutral-600 hover:bg-neutral-50'
@@ -87,7 +87,7 @@ export function ImportModal({ isOpen, onClose, onImport }: ImportModalProps) {
               <button
                 type="button"
                 onClick={() => setDefaultOwner('parag')}
-                className={`py-1.5 px-3 rounded border font-mono text-xs cursor-pointer transition-colors ${
+                className={`py-1.5 px-3 rounded border text-xs cursor-pointer transition-colors ${
                   defaultOwner === 'parag'
                     ? 'bg-neutral-900 text-white border-neutral-900'
                     : 'bg-white border-neutral-200 text-neutral-600 hover:bg-neutral-50'
@@ -107,12 +107,12 @@ export function ImportModal({ isOpen, onClose, onImport }: ImportModalProps) {
               value={csvText}
               onChange={(e) => setCsvText(e.target.value)}
               placeholder={`Example:\nCatan, 3-4, 75, Shelf A\nTicket to Ride, 2-5, 45, Shelf B\nCodenames, 2-8, 15, Party Games`}
-              className="w-full p-2.5 font-mono text-xs bg-neutral-50 border border-neutral-200 rounded focus:outline-hidden focus:border-neutral-900"
+              className="w-full p-2.5 text-xs bg-neutral-50 border border-neutral-200 rounded focus:outline-hidden focus:border-neutral-900"
             />
           </div>
 
           {successCount !== null && (
-            <div className="p-2.5 bg-neutral-900 text-white rounded flex items-center gap-2 font-mono text-xs">
+            <div className="p-2.5 bg-neutral-900 text-white rounded flex items-center gap-2 text-xs">
               <Check className="w-3.5 h-3.5 text-emerald-400" />
               <span>Successfully imported {successCount} games!</span>
             </div>

@@ -72,7 +72,7 @@ export function GameDetailModal({ game, onClose }: GameDetailModalProps) {
 
           {/* Owner Overlay Badge */}
           <div className="absolute bottom-3 left-3">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-mono font-medium bg-white/95 text-neutral-900 border border-neutral-200 backdrop-blur-xs">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-white/95 text-neutral-900 border border-neutral-200 backdrop-blur-xs">
               <span className={`w-1.5 h-1.5 rounded-full ${ownerDotColor}`} />
               Owned by: {game.owner}
             </span>
@@ -89,7 +89,7 @@ export function GameDetailModal({ game, onClose }: GameDetailModalProps) {
                 {game.name}
               </h2>
               {game.yearPublished && (
-                <p className="text-xs text-neutral-400 font-mono flex items-center gap-1 mt-0.5">
+                <p className="text-xs text-neutral-400 flex items-center gap-1 mt-0.5">
                   <Calendar className="w-3 h-3" /> Published {game.yearPublished}
                 </p>
               )}
@@ -99,7 +99,7 @@ export function GameDetailModal({ game, onClose }: GameDetailModalProps) {
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-neutral-900 text-white flex-shrink-0">
                 <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                 <div className="text-right">
-                  <div className="text-sm font-mono font-bold leading-none">{game.bggRating}</div>
+                  <div className="text-sm font-bold leading-none">{game.bggRating}</div>
                 </div>
               </div>
             )}
@@ -110,16 +110,16 @@ export function GameDetailModal({ game, onClose }: GameDetailModalProps) {
             <div className="flex items-center gap-2.5 p-3 rounded bg-neutral-50 border border-neutral-200">
               <Users className="w-4 h-4 text-neutral-500" />
               <div>
-                <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider">Players</div>
-                <div className="text-xs font-mono font-semibold text-neutral-900">{playersText}</div>
+                <div className="text-[11px] text-neutral-500 uppercase tracking-wider">Players</div>
+                <div className="text-xs font-semibold text-neutral-900">{playersText}</div>
               </div>
             </div>
 
             <div className="flex items-center gap-2.5 p-3 rounded bg-neutral-50 border border-neutral-200">
               <Clock className="w-4 h-4 text-neutral-500" />
               <div>
-                <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider">Play Time</div>
-                <div className="text-xs font-mono font-semibold text-neutral-900">{timeText}</div>
+                <div className="text-[11px] text-neutral-500 uppercase tracking-wider">Play Time</div>
+                <div className="text-xs font-semibold text-neutral-900">{timeText}</div>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ export function GameDetailModal({ game, onClose }: GameDetailModalProps) {
           {/* Description */}
           {game.description && (
             <div className="space-y-1">
-              <h4 className="text-[10px] font-mono uppercase tracking-widest text-neutral-400">About</h4>
+              <h4 className="text-[10px] uppercase tracking-widest text-neutral-400">About</h4>
               <p className="text-xs text-neutral-600 leading-relaxed">
                 {game.description}
               </p>
@@ -144,14 +144,14 @@ export function GameDetailModal({ game, onClose }: GameDetailModalProps) {
           {/* Categories */}
           {game.categories && game.categories.length > 0 && (
             <div className="space-y-1.5 pt-1">
-              <h4 className="text-[10px] font-mono uppercase tracking-widest text-neutral-400 flex items-center gap-1">
+              <h4 className="text-[10px] uppercase tracking-widest text-neutral-400 flex items-center gap-1">
                 <Tag className="w-3 h-3" /> Categories & Mechanics
               </h4>
               <div className="flex flex-wrap gap-1.5">
                 {game.categories.map((cat) => (
                   <span
                     key={cat}
-                    className="text-[11px] font-mono text-neutral-600 bg-neutral-100 px-2 py-0.5 rounded border border-neutral-200"
+                    className="text-[11px] text-neutral-600 bg-neutral-100 px-2 py-0.5 rounded border border-neutral-200"
                   >
                     {cat}
                   </span>
@@ -167,7 +167,7 @@ export function GameDetailModal({ game, onClose }: GameDetailModalProps) {
                 href={`https://boardgamegeek.com/boardgame/${game.bggId}`}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-mono font-medium bg-white text-neutral-800 hover:bg-neutral-50 transition-colors border border-neutral-200"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium bg-white text-neutral-800 hover:bg-neutral-50 transition-colors border border-neutral-200"
               >
                 BoardGameGeek
                 <ExternalLink className="w-3 h-3" />
@@ -177,7 +177,7 @@ export function GameDetailModal({ game, onClose }: GameDetailModalProps) {
                 href={`https://boardgamegeek.com/geeksearch.php?action=search&objecttype=boardgame&q=${encodeURIComponent(game.name)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-mono font-medium bg-white text-neutral-800 hover:bg-neutral-50 transition-colors border border-neutral-200"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium bg-white text-neutral-800 hover:bg-neutral-50 transition-colors border border-neutral-200"
               >
                 Search on BGG
                 <ExternalLink className="w-3 h-3" />

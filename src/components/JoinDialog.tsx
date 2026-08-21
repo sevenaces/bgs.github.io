@@ -64,7 +64,7 @@ export function JoinDialog({ isOpen, onClose }: JoinDialogProps) {
               includeMargin={false}
             />
           </div>
-          <span className="text-[11px] font-mono text-neutral-400 uppercase tracking-wider">
+          <span className="text-[11px] text-neutral-400 uppercase tracking-wider">
             Scan with your phone camera
           </span>
         </div>

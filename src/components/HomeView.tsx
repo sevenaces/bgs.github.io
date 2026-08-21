@@ -17,7 +17,7 @@ export function HomeView({ meetups, onExploreGames, onOpenJoin, onExploreMeetups
     <div id="home-view" className="max-w-3xl mx-auto space-y-9 animate-in fade-in duration-300">
       {/* Hero Welcome Section */}
       <section className="pt-2 pb-2">
-        <div className="flex items-center gap-2 text-xs font-mono text-neutral-500 uppercase tracking-wider mb-3">
+        <div className="flex items-center gap-2 text-xs text-neutral-500 uppercase tracking-wider mb-3">
           <MapPin className="w-3.5 h-3.5 text-neutral-700" />
           <span>North Bengaluru • Near Hebbal</span>
         </div>
@@ -148,10 +148,10 @@ export function HomeView({ meetups, onExploreGames, onOpenJoin, onExploreMeetups
               >
                 {/* Left Date Stamp Block (Hidden on mobile, shown on sm+) */}
                 <div className="hidden sm:flex w-20 flex-shrink-0 flex-col items-center justify-center p-3 bg-neutral-100 rounded-xl border border-neutral-200 group-hover:border-neutral-300 transition-colors text-center">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-neutral-500 font-semibold">
+                  <span className="text-[11px] uppercase tracking-wider text-neutral-500 font-semibold">
                     {month || 'AUG'}
                   </span>
-                  <span className="text-3xl font-black text-neutral-900 leading-none my-0.5 font-mono">
+                  <span className="text-3xl font-black text-neutral-900 leading-none my-0.5">
                     {day}
                   </span>
                 </div>
@@ -161,7 +161,7 @@ export function HomeView({ meetups, onExploreGames, onOpenJoin, onExploreMeetups
                   {/* Header: Date | Time | Host | Location */}
                   <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 pb-3 border-b border-neutral-100 text-xs sm:text-sm text-neutral-700">
                     {/* Mobile Date Badge */}
-                    <div className="sm:hidden font-mono font-bold text-neutral-900 bg-neutral-100 px-2 py-0.5 rounded text-xs">
+                    <div className="sm:hidden font-bold text-neutral-900 bg-neutral-100 px-2 py-0.5 rounded text-xs">
                       {meetup.date}
                     </div>
                     <span className="sm:hidden text-neutral-300">|</span>
@@ -169,7 +169,7 @@ export function HomeView({ meetups, onExploreGames, onOpenJoin, onExploreMeetups
                     {/* Time (if available) */}
                     {meetup.time && (
                       <>
-                        <div className="flex items-center gap-1.5 text-neutral-800 font-mono text-xs">
+                        <div className="flex items-center gap-1.5 text-neutral-800 text-xs">
                           <Clock className="w-3.5 h-3.5 text-neutral-400" />
                           <span>{meetup.time}</span>
                         </div>
@@ -218,7 +218,7 @@ export function HomeView({ meetups, onExploreGames, onOpenJoin, onExploreMeetups
                   {/* Games Played Section */}
                   {gamesPlayedList.length > 0 && (
                     <div className="pt-3 border-t border-neutral-100 flex flex-wrap items-center gap-2">
-                      <div className="flex items-center gap-1.5 text-xs font-mono text-neutral-500 uppercase tracking-wider font-medium mr-1">
+                      <div className="flex items-center gap-1.5 text-xs text-neutral-500 uppercase tracking-wider font-medium mr-1">
                         <Dices className="w-3.5 h-3.5 text-neutral-600" />
                         <span>Games Played:</span>
                       </div>
