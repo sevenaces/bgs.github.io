@@ -1,0 +1,6 @@
+{
+  "name": "Board Game Society",
+  "description": "A clean board game collection directory for Board Game Society showing all games and their owners.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
