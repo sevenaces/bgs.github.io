@@ -26,6 +26,17 @@ export type OwnerFilter = 'all' | 'parag' | 'dharitri' | 'other';
 export type ViewMode = 'grid' | 'table';
 export type SortOption = 'name-asc' | 'name-desc' | 'rating-desc' | 'playtime-asc' | 'players-asc' | 'year-desc';
 
+export interface MeetupSession {
+  id: string;
+  date: string;
+  time?: string;
+  location: string;
+  locationUrl?: string;
+  host: string;
+  description?: string;
+  gamesPlayed?: string[];
+}
+
 export interface SyncStatus {
   bgg: 'idle' | 'loading' | 'success' | 'error';
   sheet: 'idle' | 'loading' | 'success' | 'error';
@@ -34,3 +45,4 @@ export interface SyncStatus {
   sheetCount?: number;
   errorMessage?: string;
 }
+

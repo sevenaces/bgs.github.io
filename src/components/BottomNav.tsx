@@ -1,5 +1,5 @@
 import React from 'react';
-import { Gamepad2, Calendar, MessageCircle } from 'lucide-react';
+import { Home, Gamepad2, Calendar, MessageCircle } from 'lucide-react';
 import { TabType } from './Header';
 
 interface BottomNavProps {
@@ -14,7 +14,20 @@ export function BottomNav({ activeTab, onTabChange, onOpenJoin }: BottomNavProps
       id="mobile-bottom-nav"
       className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-neutral-200 px-3 py-1.5 shadow-lg"
     >
-      <div className="grid grid-cols-3 gap-1 max-w-md mx-auto">
+      <div className="grid grid-cols-4 gap-1 max-w-md mx-auto">
+        <button
+          id="mobile-tab-home"
+          onClick={() => onTabChange('home')}
+          className={`flex flex-col items-center justify-center py-1.5 px-2 rounded-lg text-xs font-medium transition-colors ${
+            activeTab === 'home'
+              ? 'text-neutral-900 bg-neutral-100 font-semibold'
+              : 'text-neutral-500 hover:text-neutral-900'
+          }`}
+        >
+          <Home className={`w-5 h-5 mb-0.5 ${activeTab === 'home' ? 'stroke-[2.25]' : 'stroke-[1.75]'}`} />
+          <span>Home</span>
+        </button>
+
         <button
           id="mobile-tab-games"
           onClick={() => onTabChange('games')}

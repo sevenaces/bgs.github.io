@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dices, MessageCircle } from 'lucide-react';
+import { Dices, Home, Gamepad2, Calendar, MessageCircle } from 'lucide-react';
 
 export type TabType = 'home' | 'games' | 'meetups';
 
@@ -24,9 +24,11 @@ export function Header({ activeTab, onTabChange, onOpenJoin }: HeaderProps) {
             <div className="w-8 h-8 rounded bg-neutral-900 text-white flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-800 transition-colors">
               <Dices className="w-4 h-4" />
             </div>
-            <h1 className="text-base sm:text-lg font-bold tracking-tight text-neutral-900 font-sans group-hover:text-neutral-700 transition-colors">
-              Board Game Society
-            </h1>
+            <div>
+              <h1 className="text-sm sm:text-base font-bold tracking-tight text-neutral-900 font-sans group-hover:text-neutral-700 transition-colors leading-tight">
+                Board Game Society
+              </h1>
+            </div>
           </button>
 
           {/* Desktop Navigation Tabs (Hidden on mobile) */}
@@ -34,46 +36,49 @@ export function Header({ activeTab, onTabChange, onOpenJoin }: HeaderProps) {
             <button
               id="tab-home-desktop"
               onClick={() => onTabChange('home')}
-              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                 activeTab === 'home'
                   ? 'bg-neutral-900 text-white'
                   : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100'
               }`}
             >
-              Home
+              <Home className="w-4 h-4" />
+              <span>Home</span>
             </button>
 
             <button
               id="tab-games-desktop"
               onClick={() => onTabChange('games')}
-              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                 activeTab === 'games'
                   ? 'bg-neutral-900 text-white'
                   : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100'
               }`}
             >
-              Games
+              <Gamepad2 className="w-4 h-4" />
+              <span>Games</span>
             </button>
 
             <button
               id="tab-meetups-desktop"
               onClick={() => onTabChange('meetups')}
-              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                 activeTab === 'meetups'
                   ? 'bg-neutral-900 text-white'
                   : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100'
               }`}
             >
-              Meetups
+              <Calendar className="w-4 h-4" />
+              <span>Meetups</span>
             </button>
 
             <button
               id="tab-join-desktop"
               onClick={onOpenJoin}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors ml-1"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors ml-1 cursor-pointer"
             >
-              <MessageCircle className="w-3.5 h-3.5" />
-              Join
+              <MessageCircle className="w-4 h-4" />
+              <span>Join</span>
             </button>
           </nav>
         </div>
