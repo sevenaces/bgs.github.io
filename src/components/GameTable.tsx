@@ -1,12 +1,11 @@
-import { Users, Clock, Star, ExternalLink, Dices } from 'lucide-react';
+import { Star, ExternalLink, Dices, MessageCircle } from 'lucide-react';
 import { BoardGame } from '../types';
 
 interface GameTableProps {
   games: BoardGame[];
-  onSelect: (game: BoardGame) => void;
 }
 
-export function GameTable({ games, onSelect }: GameTableProps) {
+export function GameTable({ games }: GameTableProps) {
   if (games.length === 0) {
     return null;
   }
@@ -20,11 +19,9 @@ export function GameTable({ games, onSelect }: GameTableProps) {
               <th className="py-2.5 px-3.5 w-10 text-center font-medium">#</th>
               <th className="py-2.5 px-3.5 font-medium">Game Title</th>
               <th className="py-2.5 px-3.5 font-medium">Owner</th>
-              <th className="py-2.5 px-3.5 whitespace-nowrap font-medium">Players</th>
-              <th className="py-2.5 px-3.5 whitespace-nowrap font-medium">Duration</th>
               <th className="py-2.5 px-3.5 text-center font-medium">Year</th>
               <th className="py-2.5 px-3.5 text-center font-medium">Rating</th>
-              <th className="py-2.5 px-3.5 text-right font-medium">Links</th>
+              <th className="py-2.5 px-3.5 text-right font-medium">Action</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-neutral-100 font-sans">
@@ -38,23 +35,12 @@ export function GameTable({ games, onSelect }: GameTableProps) {
                 ? 'bg-emerald-600'
                 : 'bg-purple-600';
 
-              let players = '2-4';
-              if (game.minPlayers && game.maxPlayers) {
-                players = game.minPlayers === game.maxPlayers ? `${game.minPlayers}` : `${game.minPlayers} - ${game.maxPlayers}`;
-              }
-
-              let duration = '30m';
-              if (game.playingTime) {
-                duration = `${game.playingTime}m`;
-              } else if (game.minPlayTime && game.maxPlayTime) {
-                duration = `${game.minPlayTime}-${game.maxPlayTime}m`;
-              }
+              const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/J8JQz88u0lL0AFTniFGLbk';
 
               return (
                 <tr
                   key={game.id}
-                  onClick={() => onSelect(game)}
-                  className="hover:bg-neutral-50 transition-colors cursor-pointer group"
+                  className="hover:bg-neutral-50/70 transition-colors"
                 >
                   {/* Row Number */}
                   <td className="py-2.5 px-3.5 text-center text-neutral-400 text-[11px]">
@@ -78,7 +64,7 @@ export function GameTable({ games, onSelect }: GameTableProps) {
                         )}
                       </div>
                       <div>
-                        <span className="font-semibold text-neutral-900 group-hover:text-black transition-colors block">
+                        <span className="font-semibold text-neutral-900 block">
                           {game.name}
                         </span>
                         {game.categories && game.categories.length > 0 && (
@@ -95,10 +81,10 @@ export function GameTable({ games, onSelect }: GameTableProps) {
                     <div className="flex flex-col items-start gap-1">
                       {game.owners && game.owners.length > 1 ? (
                         <div className="flex flex-wrap gap-1">
-                          {game.owners.map((o, idx) => {
+                          {game.owners.map((o, oIdx) => {
                             const dotColor = o.ownerType === 'parag' ? 'bg-neutral-900' : o.ownerType === 'dharitri' ? 'bg-emerald-600' : 'bg-purple-600';
                             return (
-                              <span key={idx} className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-medium bg-neutral-50 text-neutral-900 border border-neutral-200">
+                              <span key={oIdx} className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-medium bg-neutral-50 text-neutral-900 border border-neutral-200">
                                 <span className={`w-1.5 h-1.5 rounded-full ${dotColor}`} />
                                 {o.name.replace(/\s*\(reachparag\)/i, '')}
                               </span>
@@ -119,22 +105,6 @@ export function GameTable({ games, onSelect }: GameTableProps) {
                     </div>
                   </td>
 
-                  {/* Players */}
-                  <td className="py-2.5 px-3.5 whitespace-nowrap text-[11px] text-neutral-600">
-                    <span className="inline-flex items-center gap-1">
-                      <Users className="w-3 h-3 text-neutral-400" />
-                      {players}
-                    </span>
-                  </td>
-
-                  {/* Duration */}
-                  <td className="py-2.5 px-3.5 whitespace-nowrap text-[11px] text-neutral-600">
-                    <span className="inline-flex items-center gap-1">
-                      <Clock className="w-3 h-3 text-neutral-400" />
-                      {duration}
-                    </span>
-                  </td>
-
                   {/* Year */}
                   <td className="py-2.5 px-3.5 text-center text-neutral-500 text-[11px]">
                     {game.yearPublished || '—'}
@@ -152,23 +122,32 @@ export function GameTable({ games, onSelect }: GameTableProps) {
                     )}
                   </td>
 
-                  {/* External Links */}
+                  {/* Find players CTA & Links */}
                   <td className="py-2.5 px-3.5 text-right whitespace-nowrap">
-                    {game.bggId ? (
+                    <div className="flex items-center justify-end gap-2">
+                      {game.bggId && (
+                        <a
+                          href={`https://boardgamegeek.com/boardgame/${game.bggId}`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1 text-[11px] text-neutral-400 hover:text-neutral-900 transition-colors p-1"
+                          title="BoardGameGeek link"
+                        >
+                          BGG
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      )}
                       <a
-                        href={`https://boardgamegeek.com/boardgame/${game.bggId}`}
+                        id={`btn-table-find-players-${game.id}`}
+                        href={WHATSAPP_GROUP_URL}
                         target="_blank"
-                        rel="noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1 text-[11px] text-neutral-400 hover:text-neutral-900 transition-colors p-1"
-                        title="BoardGameGeek link"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-neutral-50 hover:bg-neutral-100 text-neutral-800 hover:text-neutral-900 border border-neutral-200 rounded text-[11px] font-semibold transition-colors shadow-2xs"
                       >
-                        BGG
-                        <ExternalLink className="w-3 h-3" />
+                        <MessageCircle className="w-3 h-3 text-emerald-600" />
+                        <span>Find players</span>
                       </a>
-                    ) : (
-                      <span className="text-xs text-neutral-300">—</span>
-                    )}
+                    </div>
                   </td>
                 </tr>
               );

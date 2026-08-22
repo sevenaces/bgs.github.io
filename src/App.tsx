@@ -9,8 +9,7 @@ import { FilterBar } from './components/FilterBar';
 import { HomeView } from './components/HomeView';
 import { MeetupsView } from './components/MeetupsView';
 import { JoinDialog } from './components/JoinDialog';
-import { GameDetailModal } from './components/GameDetailModal';
-import { BoardGame, ViewMode } from './types';
+import { ViewMode } from './types';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabType>(() => {
@@ -21,7 +20,6 @@ export default function App() {
     return 'home';
   });
   const [isJoinOpen, setIsJoinOpen] = useState(false);
-  const [selectedGame, setSelectedGame] = useState<BoardGame | null>(null);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
@@ -104,7 +102,7 @@ export default function App() {
                   </button>
                 </div>
               ) : viewMode === 'table' ? (
-                <GameTable games={filteredGames} onSelect={setSelectedGame} />
+                <GameTable games={filteredGames} />
               ) : (
                 <div
                   className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
@@ -114,7 +112,6 @@ export default function App() {
                     <GameCard
                       key={game.id}
                       game={game}
-                      onSelect={setSelectedGame}
                     />
                   ))}
                 </div>
@@ -146,15 +143,6 @@ export default function App() {
         isOpen={isJoinOpen}
         onClose={() => setIsJoinOpen(false)}
       />
-
-      {/* Game Detail Modal */}
-      {selectedGame && (
-        <GameDetailModal
-          game={selectedGame}
-          onClose={() => setSelectedGame(null)}
-        />
-      )}
     </div>
   );
 }
-
