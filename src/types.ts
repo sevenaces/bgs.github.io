@@ -1,8 +1,15 @@
+export interface GameOwnerInfo {
+  name: string;
+  ownerType: 'parag' | 'dharitri' | 'member' | 'other';
+  note?: string;
+}
+
 export interface BoardGame {
   id: string;
   name: string;
   owner: string;
-  ownerType: 'parag' | 'dharitri' | 'member' | 'other';
+  ownerType: 'parag' | 'dharitri' | 'member' | 'other' | 'multiple';
+  owners?: GameOwnerInfo[];
   ownerNote?: string;
   minPlayers?: number;
   maxPlayers?: number;

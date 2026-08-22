@@ -9,6 +9,24 @@ export function extractGamesFromDescription(desc?: string): string[] {
 
 export const INITIAL_MEETUPS: MeetupSession[] = [
   {
+    id: 'meetup-2026-08-22',
+    date: '22 Aug',
+    time: '4:00 PM – 6:30 PM',
+    location: 'Dharitri Cafe',
+    locationUrl: 'https://maps.app.goo.gl/ycY4wVSU9cyQhRRM9',
+    host: 'Parag',
+    description: `Today was co-op day! We won together, and we lost together!
+
+We guessed words with "Just One" unique one word hints! 
+
+Followed by defusing bombs (some unsuccessfuly) in "Keep Talking and Nobody Explodes"
+
+Then we spent some time trying to avenge the death of the director by following ghostly visions to find the murderer in "Mysterium Park"
+
+Ending the evening with a quick game of "Werewolves".`,
+    gamesPlayed: ['Just One', 'Keep Talking and Nobody Explodes', 'Mysterium Park', 'Werewolves']
+  },
+  {
     id: 'meetup-2024-08-20',
     date: '20 Aug',
     time: '7:00 PM – 10:30 PM',

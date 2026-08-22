@@ -92,11 +92,25 @@ export function GameTable({ games, onSelect }: GameTableProps) {
 
                   {/* Owner */}
                   <td className="py-2.5 px-3.5">
-                    <div className="flex flex-col items-start gap-0.5">
-                      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-medium bg-neutral-50 text-neutral-900 border border-neutral-200">
-                        <span className={`w-1.5 h-1.5 rounded-full ${ownerDotColor}`} />
-                        {game.owner}
-                      </span>
+                    <div className="flex flex-col items-start gap-1">
+                      {game.owners && game.owners.length > 1 ? (
+                        <div className="flex flex-wrap gap-1">
+                          {game.owners.map((o, idx) => {
+                            const dotColor = o.ownerType === 'parag' ? 'bg-neutral-900' : o.ownerType === 'dharitri' ? 'bg-emerald-600' : 'bg-purple-600';
+                            return (
+                              <span key={idx} className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-medium bg-neutral-50 text-neutral-900 border border-neutral-200">
+                                <span className={`w-1.5 h-1.5 rounded-full ${dotColor}`} />
+                                {o.name.replace(/\s*\(reachparag\)/i, '')}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      ) : (
+                        <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-medium bg-neutral-50 text-neutral-900 border border-neutral-200">
+                          <span className={`w-1.5 h-1.5 rounded-full ${ownerDotColor}`} />
+                          {game.owner}
+                        </span>
+                      )}
                       {game.ownerNote && (
                         <span className="text-[10px] text-neutral-500">
                           📍 {game.ownerNote}

@@ -71,11 +71,28 @@ export function GameDetailModal({ game, onClose }: GameDetailModalProps) {
           </button>
 
           {/* Owner Overlay Badge */}
-          <div className="absolute bottom-3 left-3">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-white/95 text-neutral-900 border border-neutral-200 backdrop-blur-xs">
-              <span className={`w-1.5 h-1.5 rounded-full ${ownerDotColor}`} />
-              Owned by: {game.owner}
-            </span>
+          <div className="absolute bottom-3 left-3 max-w-[calc(100%-1.5rem)]">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded text-xs font-medium bg-white/95 text-neutral-900 border border-neutral-200 backdrop-blur-xs flex-wrap">
+              <span>Play at:</span>
+              {game.owners && game.owners.length > 1 ? (
+                <div className="flex items-center gap-2 flex-wrap">
+                  {game.owners.map((o, idx) => {
+                    const dotColor = o.ownerType === 'parag' ? 'bg-neutral-900' : o.ownerType === 'dharitri' ? 'bg-emerald-600' : 'bg-purple-600';
+                    return (
+                      <span key={idx} className="inline-flex items-center gap-1 font-semibold text-neutral-900">
+                        <span className={`w-1.5 h-1.5 rounded-full ${dotColor}`} />
+                        {o.name.replace(/\s*\(reachparag\)/i, '')}
+                      </span>
+                    );
+                  })}
+                </div>
+              ) : (
+                <span className="inline-flex items-center gap-1 font-semibold text-neutral-900">
+                  <span className={`w-1.5 h-1.5 rounded-full ${ownerDotColor}`} />
+                  {game.owner}
+                </span>
+              )}
+            </div>
           </div>
         </div>
 
@@ -141,48 +158,41 @@ export function GameDetailModal({ game, onClose }: GameDetailModalProps) {
             </div>
           )}
 
-          {/* Categories */}
-          {game.categories && game.categories.length > 0 && (
-            <div className="space-y-1.5 pt-1">
-              <h4 className="text-[10px] uppercase tracking-widest text-neutral-400 flex items-center gap-1">
-                <Tag className="w-3 h-3" /> Categories & Mechanics
-              </h4>
-              <div className="flex flex-wrap gap-1.5">
-                {game.categories.map((cat) => (
-                  <span
-                    key={cat}
-                    className="text-[11px] text-neutral-600 bg-neutral-100 px-2 py-0.5 rounded border border-neutral-200"
-                  >
-                    {cat}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Footer Actions */}
-          <div className="pt-3 border-t border-neutral-200 flex items-center justify-between gap-3">
-            {game.bggId ? (
+          <div className="pt-3 border-t border-neutral-200 flex items-center justify-between gap-3 flex-wrap">
+            <div className="flex items-center gap-2">
+              {game.bggId ? (
+                <a
+                  href={`https://boardgamegeek.com/boardgame/${game.bggId}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium bg-white text-neutral-800 hover:bg-neutral-50 transition-colors border border-neutral-200"
+                >
+                  BoardGameGeek
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              ) : (
+                <a
+                  href={`https://boardgamegeek.com/geeksearch.php?action=search&objecttype=boardgame&q=${encodeURIComponent(game.name)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium bg-white text-neutral-800 hover:bg-neutral-50 transition-colors border border-neutral-200"
+                >
+                  Search on BGG
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
+
               <a
-                href={`https://boardgamegeek.com/boardgame/${game.bggId}`}
+                href={game.videoUrl || `https://www.youtube.com/results?search_query=${encodeURIComponent(`${game.name} how to play board game`)}`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium bg-white text-neutral-800 hover:bg-neutral-50 transition-colors border border-neutral-200"
               >
-                BoardGameGeek
+                How to Play
                 <ExternalLink className="w-3 h-3" />
               </a>
-            ) : (
-              <a
-                href={`https://boardgamegeek.com/geeksearch.php?action=search&objecttype=boardgame&q=${encodeURIComponent(game.name)}`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium bg-white text-neutral-800 hover:bg-neutral-50 transition-colors border border-neutral-200"
-              >
-                Search on BGG
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            )}
+            </div>
 
             <button
               onClick={onClose}
