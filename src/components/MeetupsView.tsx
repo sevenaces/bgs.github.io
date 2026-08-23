@@ -1,16 +1,23 @@
 import React from 'react';
 import { MapPin, Dices, MessageCircle, ExternalLink, Clock, User } from 'lucide-react';
 import { MeetupSession, BoardGame } from '../types';
-import { extractGamesFromDescription } from '../data/meetups';
+import { extractGamesFromDescription, sortMeetupsLatestFirst } from '../data/meetups';
 
 interface MeetupsViewProps {
   meetups: MeetupSession[];
   games: BoardGame[];
   onOpenJoin: () => void;
-  onSelectGame?: (gameName: string) => void;
+  onSelectGame?: (game: BoardGame) => void;
 }
 
-export function MeetupsView({ meetups, onOpenJoin }: MeetupsViewProps) {
+export function MeetupsView({ meetups, games, onOpenJoin, onSelectGame }: MeetupsViewProps) {
+  const sortedMeetups = React.useMemo(() => sortMeetupsLatestFirst(meetups), [meetups]);
+
+  const findGameByName = (name: string): BoardGame | undefined => {
+    const cleanName = name.toLowerCase().trim();
+    return games.find(g => g.name.toLowerCase().trim() === cleanName || g.id === cleanName.replace(/[^a-z0-9]+/g, '-'));
+  };
+
   return (
     <div id="meetups-view" className="max-w-3xl mx-auto space-y-7 animate-in fade-in duration-300">
       {/* Header Banner - Focus on Joining Next Session */}
@@ -34,7 +41,7 @@ export function MeetupsView({ meetups, onOpenJoin }: MeetupsViewProps) {
 
       {/* Recaps List */}
       <div className="space-y-6">
-        {meetups.map((meetup) => {
+        {sortedMeetups.map((meetup) => {
           const gamesPlayedList =
             meetup.gamesPlayed && meetup.gamesPlayed.length > 0
               ? meetup.gamesPlayed
@@ -125,14 +132,24 @@ export function MeetupsView({ meetups, onOpenJoin }: MeetupsViewProps) {
                       <span>Games Played:</span>
                     </div>
                     <div className="flex flex-wrap gap-1.5">
-                      {gamesPlayedList.map((game, gIdx) => (
-                        <span
-                          key={gIdx}
-                          className="px-2.5 py-1 rounded-md bg-neutral-100 text-neutral-900 text-xs font-medium border border-neutral-200"
-                        >
-                          {game}
-                        </span>
-                      ))}
+                      {gamesPlayedList.map((gameName, gIdx) => {
+                        const matchedGame = findGameByName(gameName);
+                        return (
+                          <button
+                            key={gIdx}
+                            onClick={() => matchedGame && onSelectGame && onSelectGame(matchedGame)}
+                            disabled={!matchedGame}
+                            className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors inline-flex items-center gap-1 ${
+                              matchedGame
+                                ? 'bg-neutral-100 hover:bg-neutral-200 text-neutral-900 border-neutral-200 cursor-pointer shadow-2xs'
+                                : 'bg-neutral-50 text-neutral-600 border-neutral-200 cursor-default'
+                            }`}
+                            title={matchedGame ? `View ${matchedGame.name} details` : gameName}
+                          >
+                            <span>{gameName}</span>
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
                 )}

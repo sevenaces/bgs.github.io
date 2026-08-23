@@ -7,6 +7,48 @@ export function extractGamesFromDescription(desc?: string): string[] {
   return Array.from(new Set(matches.map((m) => m.replace(/"/g, '').trim())));
 }
 
+const MONTH_MAP: Record<string, number> = {
+  jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5,
+  jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11,
+};
+
+export function parseMeetupDateToTimestamp(dateStr?: string, id?: string): number {
+  if (id) {
+    const match = id.match(/(\d{4})-(\d{2})-(\d{2})/);
+    if (match) {
+      const [, y, m, d] = match;
+      return new Date(parseInt(y, 10), parseInt(m, 10) - 1, parseInt(d, 10)).getTime();
+    }
+  }
+
+  if (dateStr) {
+    const parts = dateStr.trim().split(/\s+/);
+    if (parts.length >= 2) {
+      const day = parseInt(parts[0], 10);
+      const monthStr = parts[1].toLowerCase().slice(0, 3);
+      const month = MONTH_MAP[monthStr] ?? 0;
+      const year = parts[2] ? parseInt(parts[2], 10) : 2024;
+      return new Date(year, month, isNaN(day) ? 1 : day).getTime();
+    }
+  }
+
+  return 0;
+}
+
+export function sortMeetupsLatestFirst(meetups: MeetupSession[]): MeetupSession[] {
+  return [...meetups].sort((a, b) => {
+    const timeA = parseMeetupDateToTimestamp(a.date, a.id);
+    const timeB = parseMeetupDateToTimestamp(b.date, b.id);
+    if (timeA !== timeB) {
+      return timeB - timeA; // Descending (latest first)
+    }
+    if (a.createdAt && b.createdAt) {
+      return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+    }
+    return 0;
+  });
+}
+
 export const INITIAL_MEETUPS: MeetupSession[] = [
   {
     id: 'meetup-2026-08-22',
@@ -23,8 +65,8 @@ Followed by defusing bombs (some unsuccessfuly) in "Keep Talking and Nobody Expl
 
 Then we spent some time trying to avenge the death of the director by following ghostly visions to find the murderer in "Mysterium Park"
 
-Ending the evening with a quick game of "Werewolves".`,
-    gamesPlayed: ['Just One', 'Keep Talking and Nobody Explodes', 'Mysterium Park', 'Werewolves']
+Ending the evening with a quick game of "Ultimate Werewolf".`,
+    gamesPlayed: ['Just One', 'Keep Talking and Nobody Explodes', 'Mysterium Park', 'Ultimate Werewolf']
   },
   {
     id: 'meetup-2024-08-20',
@@ -33,18 +75,18 @@ Ending the evening with a quick game of "Werewolves".`,
     location: 'Dharitri Cafe',
     locationUrl: 'https://maps.app.goo.gl/ycY4wVSU9cyQhRRM9',
     host: 'Parag',
-    description: `Today, we had a chaotic round of table slapping with "Taco Cat"
+    description: `Today, we had a chaotic round of table slapping with "Taco Cat Goat Cheese Pizza"
 
 Fought over the tastiest snacks plates with "Chatpate"
 
-Accused each other about being Werewolves to save villagers (unsuccessfully) in "Werewolves"
+Accused each other about being Werewolves to save villagers (unsuccessfully) in "Ultimate Werewolf"
 
 Figured out what card we were holding, to make pairs of three in "Trio"
 
 And ended the night with a round of making the tastiest dishes in "Masala Lab"!
 
 3 hours, 5 games, and 8 amazing players!`,
-    gamesPlayed: ['Taco Cat', 'Chatpate', 'Werewolves', 'Trio', 'Masala Lab']
+    gamesPlayed: ['Taco Cat Goat Cheese Pizza', 'Chatpate', 'Ultimate Werewolf', 'Trio', 'Masala Lab']
   },
   {
     id: 'meetup-2024-08-14',

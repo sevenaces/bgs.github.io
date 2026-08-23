@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { X, Copy, Check, MessageCircle, ExternalLink } from 'lucide-react';
+import { trackEvent } from '../lib/analytics';
 
 interface JoinDialogProps {
   isOpen: boolean;
@@ -17,7 +18,12 @@ export function JoinDialog({ isOpen, onClose }: JoinDialogProps) {
   const handleCopy = () => {
     navigator.clipboard.writeText(WHATSAPP_LINK);
     setCopied(true);
+    trackEvent('copy_whatsapp_link_click');
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleOpenWhatsApp = () => {
+    trackEvent('open_whatsapp_dialog_click');
   };
 
   return (
@@ -74,6 +80,7 @@ export function JoinDialog({ isOpen, onClose }: JoinDialogProps) {
           <a
             id="btn-open-whatsapp"
             href={WHATSAPP_LINK}
+            onClick={handleOpenWhatsApp}
             target="_blank"
             rel="noreferrer"
             className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm transition-colors shadow-xs"

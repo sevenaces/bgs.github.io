@@ -1,5 +1,6 @@
 import { Star, ExternalLink, Dices, MessageCircle } from 'lucide-react';
 import { BoardGame } from '../types';
+import { trackEvent } from '../lib/analytics';
 
 interface GameTableProps {
   games: BoardGame[];
@@ -140,6 +141,13 @@ export function GameTable({ games }: GameTableProps) {
                       <a
                         id={`btn-table-find-players-${game.id}`}
                         href={WHATSAPP_GROUP_URL}
+                        onClick={() => {
+                          trackEvent('find_players_click', {
+                            game_name: game.name,
+                            game_id: game.id,
+                            view: 'table',
+                          });
+                        }}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-neutral-50 hover:bg-neutral-100 text-neutral-800 hover:text-neutral-900 border border-neutral-200 rounded text-[11px] font-semibold transition-colors shadow-2xs"

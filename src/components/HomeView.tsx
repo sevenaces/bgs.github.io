@@ -1,7 +1,8 @@
 import React from 'react';
 import { MapPin, Calendar, Clock, Sparkles, MessageCircle, ArrowRight, Dices, ExternalLink, User } from 'lucide-react';
 import { MeetupSession } from '../types';
-import { extractGamesFromDescription } from '../data/meetups';
+import { extractGamesFromDescription, sortMeetupsLatestFirst } from '../data/meetups';
+import { trackEvent } from '../lib/analytics';
 
 interface HomeViewProps {
   meetups: MeetupSession[];
@@ -11,7 +12,7 @@ interface HomeViewProps {
 }
 
 export function HomeView({ meetups, onExploreGames, onOpenJoin, onExploreMeetups }: HomeViewProps) {
-  const lastMeetup = meetups.slice(0, 1);
+  const lastMeetup = React.useMemo(() => sortMeetupsLatestFirst(meetups).slice(0, 1), [meetups]);
 
   return (
     <div id="home-view" className="max-w-3xl mx-auto space-y-9 animate-in fade-in duration-300">
@@ -32,7 +33,10 @@ export function HomeView({ meetups, onExploreGames, onOpenJoin, onExploreMeetups
         <div className="flex flex-wrap gap-3">
           <button
             id="btn-home-join"
-            onClick={onOpenJoin}
+            onClick={() => {
+              trackEvent('join_whatsapp_click', { source: 'hero' });
+              onOpenJoin();
+            }}
             className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm transition-colors cursor-pointer shadow-xs"
           >
             <MessageCircle className="w-4 h-4" />
@@ -41,7 +45,10 @@ export function HomeView({ meetups, onExploreGames, onOpenJoin, onExploreMeetups
 
           <button
             id="btn-home-explore-games"
-            onClick={onExploreGames}
+            onClick={() => {
+              trackEvent('explore_games_click', { source: 'hero' });
+              onExploreGames();
+            }}
             className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white hover:bg-neutral-100 text-neutral-900 font-medium text-sm border border-neutral-200 transition-colors cursor-pointer"
           >
             Browse Game Library
@@ -122,7 +129,10 @@ export function HomeView({ meetups, onExploreGames, onOpenJoin, onExploreMeetups
           </div>
           <button
             id="btn-home-view-all-meetups"
-            onClick={onExploreMeetups}
+            onClick={() => {
+              trackEvent('explore_meetups_click', { source: 'home_recent' });
+              onExploreMeetups();
+            }}
             className="text-xs font-medium text-neutral-600 hover:text-neutral-900 flex items-center gap-1 cursor-pointer transition-colors"
           >
             <span>View all meetups</span>
@@ -246,7 +256,10 @@ export function HomeView({ meetups, onExploreGames, onOpenJoin, onExploreMeetups
             </div>
             <button
               id="btn-home-join-next-meetup"
-              onClick={onOpenJoin}
+              onClick={() => {
+                trackEvent('join_whatsapp_click', { source: 'next_meetup_banner' });
+                onOpenJoin();
+              }}
               className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs sm:text-sm transition-colors shadow-xs cursor-pointer flex-shrink-0"
             >
               <MessageCircle className="w-4 h-4" />

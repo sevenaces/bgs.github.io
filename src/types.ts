@@ -27,6 +27,7 @@ export interface BoardGame {
   description?: string;
   videoUrl?: string;
   source: 'bgg' | 'google-sheet' | 'custom';
+  createdAt?: string;
 }
 
 export type OwnerFilter = 'all' | 'parag' | 'dharitri' | 'other';
@@ -42,6 +43,7 @@ export interface MeetupSession {
   host: string;
   description?: string;
   gamesPlayed?: string[];
+  createdAt?: string;
 }
 
 export interface SyncStatus {

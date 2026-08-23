@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { INITIAL_GAMES } from './data/initialGames';
-import { INITIAL_MEETUPS } from './data/meetups';
+import { useFirestoreData } from './lib/useFirestoreData';
+import { initGA, trackPageView } from './lib/analytics';
 import { Header, TabType } from './components/Header';
 import { BottomNav } from './components/BottomNav';
 import { GameCard } from './components/GameCard';
-import { GameTable } from './components/GameTable';
 import { FilterBar } from './components/FilterBar';
 import { HomeView } from './components/HomeView';
 import { MeetupsView } from './components/MeetupsView';
 import { JoinDialog } from './components/JoinDialog';
-import { ViewMode } from './types';
+import { GameDetailDialog } from './components/GameDetailDialog';
+import { BoardGame } from './types';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabType>(() => {
@@ -20,9 +20,23 @@ export default function App() {
     return 'home';
   });
   const [isJoinOpen, setIsJoinOpen] = useState(false);
+  const [selectedGame, setSelectedGame] = useState<BoardGame | null>(null);
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [viewMode, setViewMode] = useState<ViewMode>('grid');
+
+  useEffect(() => {
+    // Initialize Google Analytics if Measurement ID is set
+    initGA();
+  }, []);
+
+  useEffect(() => {
+    const tabTitles: Record<TabType, string> = {
+      home: 'Home | Board Game Society',
+      games: 'Games Library | Board Game Society',
+      meetups: 'Meetup Journals | Board Game Society',
+    };
+    trackPageView(`/${activeTab === 'home' ? '' : activeTab}`, tabTitles[activeTab] || 'Board Game Society');
+  }, [activeTab]);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -43,8 +57,7 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const games = INITIAL_GAMES;
-  const meetups = INITIAL_MEETUPS;
+  const { games, meetups, isLoading } = useFirestoreData();
 
   const filteredGames = games.filter(game => {
     if (searchQuery) {
@@ -86,8 +99,8 @@ export default function App() {
             <FilterBar
               searchQuery={searchQuery}
               onSearchChange={setSearchQuery}
-              viewMode={viewMode}
-              onViewModeChange={setViewMode}
+              totalGamesCount={games.length}
+              filteredGamesCount={filteredGames.length}
             />
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-8">
@@ -101,17 +114,16 @@ export default function App() {
                     Clear Search
                   </button>
                 </div>
-              ) : viewMode === 'table' ? (
-                <GameTable games={filteredGames} />
               ) : (
                 <div
-                  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+                  className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4"
                   id="games-grid"
                 >
                   {filteredGames.map((game) => (
                     <GameCard
                       key={game.id}
                       game={game}
+                      onSelectGame={(g) => setSelectedGame(g)}
                     />
                   ))}
                 </div>
@@ -126,6 +138,7 @@ export default function App() {
               meetups={meetups}
               games={games}
               onOpenJoin={() => setIsJoinOpen(true)}
+              onSelectGame={(g) => setSelectedGame(g)}
             />
           </div>
         )}
@@ -142,6 +155,13 @@ export default function App() {
       <JoinDialog
         isOpen={isJoinOpen}
         onClose={() => setIsJoinOpen(false)}
+      />
+
+      {/* Game Detail Dialog */}
+      <GameDetailDialog
+        game={selectedGame}
+        isOpen={selectedGame !== null}
+        onClose={() => setSelectedGame(null)}
       />
     </div>
   );

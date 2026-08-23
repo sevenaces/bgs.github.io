@@ -6,6 +6,11 @@ function mergeDuplicateGames(rawGames: BoardGame[]): BoardGame[] {
   for (const game of rawGames) {
     const key = game.name.toLowerCase().trim();
     const rawOwnerType = game.ownerType === 'multiple' ? 'other' : (game.ownerType || 'other');
+    const cleanId = game.name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+
     if (map.has(key)) {
       const existing = map.get(key)!;
       const existingOwners = existing.owners || [{ name: existing.owner, ownerType: existing.ownerType === 'multiple' ? 'other' : existing.ownerType, note: existing.ownerNote }];
@@ -34,6 +39,7 @@ function mergeDuplicateGames(rawGames: BoardGame[]): BoardGame[] {
       const initialOwners = [{ name: game.owner || (rawOwnerType === 'parag' ? 'Parag' : 'Dharitri Cafe'), ownerType: rawOwnerType, note: game.ownerNote }];
       map.set(key, {
         ...game,
+        id: cleanId,
         ownerType: rawOwnerType,
         owners: initialOwners,
         owner: initialOwners.map(o => o.name.replace(/\s*\(reachparag\)/i, '')).join(' & '),
@@ -198,6 +204,18 @@ const rawGames: BoardGame[] = [
   },
 
   // Parag's Games
+  {
+    id: 'keep-talking-and-nobody-explodes',
+    name: 'Keep Talking and Nobody Explodes',
+    owner: 'Parag',
+    ownerType: 'parag',
+    categories: ['Party', 'Cooperative'],
+    minPlayers: 2,
+    maxPlayers: 6,
+    playingTime: 30,
+    videoUrl: 'https://www.youtube.com/watch?v=1t5o68A0K6A',
+    source: 'custom'
+  },
   {
     id: 'parag-7-wonders-duel',
     name: '7 Wonders Duel',
