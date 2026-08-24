@@ -83,13 +83,13 @@ export function useFirestoreData() {
           setIsSeeded(true);
           console.log('Firestore seed completed successfully.');
         } else {
-          // Check for any missing initial games and upsert them
-          const existingIds = new Set(snapshot.docs.map(d => d.id));
-          const missingGames = INITIAL_GAMES.filter(g => !existingIds.has(g.id));
-          if (missingGames.length > 0) {
-            console.log(`Upserting ${missingGames.length} missing initial games to Firestore...`);
+          // Sync all initial games so new games (like Flamecraft) and updated thumbnails (Taboo, Splendor, Keep Talking) are merged into Firestore
+          const allInitialGames = INITIAL_GAMES;
+          const chunkSize = 300;
+          for (let i = 0; i < allInitialGames.length; i += chunkSize) {
+            const chunk = allInitialGames.slice(i, i + chunkSize);
             const batch = writeBatch(db);
-            for (const game of missingGames) {
+            for (const game of chunk) {
               const cleanGame = cleanForFirestore({
                 ...game,
                 createdAt: new Date().toISOString(),
@@ -101,8 +101,6 @@ export function useFirestoreData() {
           }
 
           // Also upsert/sync initial meetups to ensure names like Ultimate Werewolf & Taco Cat Goat Cheese Pizza are updated
-          const meetupsColRef = collection(db, 'meetups');
-          const meetupsSnap = await getDocs(query(meetupsColRef));
           const meetupBatch = writeBatch(db);
           for (const meetup of INITIAL_MEETUPS) {
             const cleanMeetup = cleanForFirestore({

@@ -213,6 +213,8 @@ const rawGames: BoardGame[] = [
     minPlayers: 2,
     maxPlayers: 6,
     playingTime: 30,
+    thumbnail: '/keep_talking.jpg',
+    image: '/keep_talking.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=1t5o68A0K6A',
     source: 'custom'
   },
@@ -424,6 +426,20 @@ const rawGames: BoardGame[] = [
     thumbnail: '/dominion.jpg',
     image: '/dominion.jpg',
     videoUrl: 'https://www.youtube.com/watch?v=52Yf3EmsAWE',
+    source: 'custom'
+  },
+  {
+    id: 'parag-flamecraft',
+    name: 'Flamecraft',
+    owner: 'Parag',
+    ownerType: 'parag',
+    categories: ['Standalone'],
+    minPlayers: 1,
+    maxPlayers: 5,
+    playingTime: 60,
+    thumbnail: '/flamecraft.jpg',
+    image: '/flamecraft.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=Fj-cSmU7v_Q',
     source: 'custom'
   },
   {
@@ -823,6 +839,8 @@ const rawGames: BoardGame[] = [
     minPlayers: 2,
     maxPlayers: 4,
     playingTime: 30,
+    thumbnail: '/splendor.png',
+    image: '/splendor.png',
     videoUrl: 'https://www.youtube.com/watch?v=XsP6LvZQpLk',
     source: 'custom'
   },
@@ -863,6 +881,8 @@ const rawGames: BoardGame[] = [
     minPlayers: 4,
     maxPlayers: 10,
     playingTime: 20,
+    thumbnail: '/taboo.png',
+    image: '/taboo.png',
     videoUrl: 'https://www.youtube.com/watch?v=QUBXDnY18n0',
     source: 'custom'
   },
@@ -875,6 +895,8 @@ const rawGames: BoardGame[] = [
     minPlayers: 4,
     maxPlayers: 10,
     playingTime: 20,
+    thumbnail: '/taboo.png',
+    image: '/taboo.png',
     videoUrl: 'https://www.youtube.com/watch?v=QUBXDnY18n0',
     source: 'custom'
   },
