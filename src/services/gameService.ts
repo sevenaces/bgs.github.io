@@ -1,5 +1,4 @@
 import { BoardGame, SyncStatus } from '../types';
-import { INITIAL_GAMES } from '../data/initialGames';
 
 const STORAGE_KEY_GAMES = 'bgs_games_collection_v1';
 const STORAGE_KEY_SYNC = 'bgs_sync_status_v1';
@@ -30,7 +29,7 @@ export function getStoredGames(): BoardGame[] {
   } catch (e) {
     console.warn('Failed to read games from localStorage:', e);
   }
-  return INITIAL_GAMES;
+  return [];
 }
 
 export function saveStoredGames(games: BoardGame[]): void {
@@ -58,8 +57,8 @@ export function getStoredSyncStatus(): SyncStatus {
     bgg: 'idle',
     sheet: 'idle',
     lastSynced: new Date(),
-    bggCount: INITIAL_GAMES.filter(g => g.ownerType === 'parag').length,
-    sheetCount: INITIAL_GAMES.filter(g => g.ownerType === 'dharitri').length,
+    bggCount: 0,
+    sheetCount: 0,
   };
 }
 
@@ -300,14 +299,6 @@ export async function syncAllGameSources(): Promise<{
 
   // Custom / member added games
   const memberGames = currentGames.filter(g => g.ownerType !== 'parag' && g.ownerType !== 'dharitri');
-
-  // Fallback to initial games if empty
-  if (bggGames.length === 0) {
-    bggGames = INITIAL_GAMES.filter(g => g.ownerType === 'parag');
-  }
-  if (sheetGames.length === 0) {
-    sheetGames = INITIAL_GAMES.filter(g => g.ownerType === 'dharitri');
-  }
 
   // Merge unique games
   const merged = [...bggGames, ...sheetGames, ...memberGames];
