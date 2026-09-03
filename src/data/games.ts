@@ -19,10 +19,13 @@ export const GAMES: BoardGame[] = [
       "Standalone"
     ],
     "source": "custom",
-    "thumbnail": "/7_wonders_duel.jpeg",
-    "image": "/7_wonders_duel.jpeg",
+    "thumbnail": "/thumbnails/7-wonders-duel.jpg",
+    "image": "/thumbnails/7-wonders-duel.jpg",
     "maxPlayers": 2,
-    "videoUrl": "https://www.youtube.com/watch?v=NlygiFc_xNY"
+    "videoUrl": "https://www.youtube.com/watch?v=NlygiFc_xNY",
+    "bggId": "173346",
+    "bggRating": 8.1,
+    "yearPublished": 2015
   },
   {
     "categories": [
@@ -40,12 +43,15 @@ export const GAMES: BoardGame[] = [
     "name": "7 Wonders Duel: Agora",
     "createdAt": "2026-08-24T09:37:08.347Z",
     "minPlayers": 2,
-    "image": "/agora.jpg",
+    "image": "/thumbnails/7-wonders-duel-agora.jpg",
     "source": "custom",
     "maxPlayers": 2,
     "id": "7-wonders-duel-agora",
-    "thumbnail": "/agora.jpg",
-    "owner": "Parag"
+    "thumbnail": "/thumbnails/7-wonders-duel-agora.jpg",
+    "owner": "Parag",
+    "bggId": "309116",
+    "bggRating": 8.1,
+    "yearPublished": 2020
   },
   {
     "categories": [
@@ -55,7 +61,7 @@ export const GAMES: BoardGame[] = [
     "id": "7-wonders-duel-pantheon",
     "ownerType": "parag",
     "playingTime": 30,
-    "image": "/pantheon.jpeg",
+    "image": "/thumbnails/7-wonders-duel-pantheon.png",
     "owners": [
       {
         "name": "Parag",
@@ -67,17 +73,20 @@ export const GAMES: BoardGame[] = [
     "name": "7 Wonders Duel: Pantheon",
     "maxPlayers": 2,
     "source": "custom",
-    "thumbnail": "/pantheon.jpeg",
-    "owner": "Parag"
+    "thumbnail": "/thumbnails/7-wonders-duel-pantheon.png",
+    "owner": "Parag",
+    "bggId": "202976",
+    "bggRating": 8,
+    "yearPublished": 2016
   },
   {
     "source": "custom",
     "playingTime": 45,
-    "thumbnail": "/angry_indians.jpg",
+    "thumbnail": "/thumbnails/angry-indians.jpg",
     "categories": [
       "Standalone"
     ],
-    "image": "/angry_indians.jpg",
+    "image": "/thumbnails/angry-indians.jpg",
     "minPlayers": 2,
     "name": "Angry Indians",
     "createdAt": "2026-08-24T09:37:08.347Z",
@@ -91,11 +100,14 @@ export const GAMES: BoardGame[] = [
     "ownerType": "parag",
     "id": "angry-indians",
     "owner": "Parag",
-    "videoUrl": "https://www.youtube.com/watch?v=oihdM_Rj44g"
+    "videoUrl": "https://www.youtube.com/watch?v=oihdM_Rj44g",
+    "bggId": "362639",
+    "bggRating": 7,
+    "yearPublished": 2022
   },
   {
     "owner": "Parag",
-    "thumbnail": "/azul.jpg",
+    "thumbnail": "/thumbnails/azul.png",
     "source": "custom",
     "maxPlayers": 4,
     "videoUrl": "https://www.youtube.com/watch?v=cI7UuD5Zp3w",
@@ -105,7 +117,7 @@ export const GAMES: BoardGame[] = [
       "Standalone"
     ],
     "playingTime": 45,
-    "image": "/azul.jpg",
+    "image": "/thumbnails/azul.png",
     "id": "azul",
     "owners": [
       {
@@ -114,14 +126,17 @@ export const GAMES: BoardGame[] = [
       }
     ],
     "ownerType": "parag",
-    "minPlayers": 2
+    "minPlayers": 2,
+    "bggId": "230802",
+    "bggRating": 7.7,
+    "yearPublished": 2017
   },
   {
     "name": "Bollywood Showdown",
-    "image": "/bollywood_showdown.jpeg",
+    "image": "/thumbnails/bollywood-showdown.jpeg",
     "createdAt": "2026-08-24T09:37:08.347Z",
     "owner": "Dharitri Cafe",
-    "thumbnail": "/bollywood_showdown.jpeg",
+    "thumbnail": "/thumbnails/bollywood-showdown.jpeg",
     "ownerType": "dharitri",
     "owners": [
       {
@@ -142,15 +157,18 @@ export const GAMES: BoardGame[] = [
       }
     ],
     "source": "custom",
-    "image": "/canvas.jpeg",
+    "image": "/thumbnails/canvas.jpg",
     "createdAt": "2026-08-24T09:37:08.347Z",
     "name": "Canvas",
-    "thumbnail": "/canvas.jpeg",
+    "thumbnail": "/thumbnails/canvas.jpg",
     "id": "canvas",
-    "videoUrl": "https://www.youtube.com/watch?v=kAZxJTqFgSw"
+    "videoUrl": "https://www.youtube.com/watch?v=kAZxJTqFgSw",
+    "bggId": "290236",
+    "bggRating": 7.2,
+    "yearPublished": 2021
   },
   {
-    "image": "/cards_againsts_humanity.png",
+    "image": "/thumbnails/cards-against-humanity.jpg",
     "maxPlayers": 30,
     "ownerType": "parag",
     "playingTime": 30,
@@ -163,19 +181,22 @@ export const GAMES: BoardGame[] = [
     "categories": [
       "Standalone"
     ],
-    "thumbnail": "/cards_againsts_humanity.png",
+    "thumbnail": "/thumbnails/cards-against-humanity.jpg",
     "minPlayers": 4,
     "owners": [
       {
         "ownerType": "parag",
         "name": "Parag"
       }
-    ]
+    ],
+    "bggId": "50381",
+    "bggRating": 5.7,
+    "yearPublished": 2009
   },
   {
     "owner": "Parag",
     "maxPlayers": 4,
-    "thumbnail": "/cascadia.webp",
+    "thumbnail": "/thumbnails/cascadia.jpg",
     "owners": [
       {
         "ownerType": "parag",
@@ -185,7 +206,7 @@ export const GAMES: BoardGame[] = [
     "minPlayers": 1,
     "videoUrl": "https://www.youtube.com/watch?v=XsP6LvZQpLk",
     "playingTime": 45,
-    "image": "/cascadia.webp",
+    "image": "/thumbnails/cascadia.jpg",
     "ownerType": "parag",
     "id": "cascadia",
     "name": "Cascadia",
@@ -193,14 +214,17 @@ export const GAMES: BoardGame[] = [
       "Standalone"
     ],
     "createdAt": "2026-08-24T09:37:08.347Z",
-    "source": "custom"
+    "source": "custom",
+    "bggId": "295947",
+    "bggRating": 7.9,
+    "yearPublished": 2021
   },
   {
     "name": "Catan",
-    "image": "/catan.jpeg",
+    "image": "/thumbnails/catan.png",
     "videoUrl": "https://www.youtube.com/watch?v=kw8drL0G2p4",
     "maxPlayers": 4,
-    "thumbnail": "/catan.jpeg",
+    "thumbnail": "/thumbnails/catan.png",
     "source": "custom",
     "categories": [
       "Standalone"
@@ -216,11 +240,14 @@ export const GAMES: BoardGame[] = [
         "name": "Parag"
       }
     ],
-    "minPlayers": 3
+    "minPlayers": 3,
+    "bggId": "13",
+    "bggRating": 7.1,
+    "yearPublished": 1995
   },
   {
     "name": "Chai Garam",
-    "image": "/chai_garam.jpeg",
+    "image": "/thumbnails/chai-garam.jpg",
     "ownerType": "parag",
     "minPlayers": 2,
     "id": "chai-garam",
@@ -237,9 +264,12 @@ export const GAMES: BoardGame[] = [
     "playingTime": 60,
     "videoUrl": "https://www.youtube.com/watch?v=9M5_B9jmxvQ",
     "owner": "Parag",
-    "thumbnail": "/chai_garam.jpeg",
+    "thumbnail": "/thumbnails/chai-garam.jpg",
     "maxPlayers": 4,
-    "source": "custom"
+    "source": "custom",
+    "bggId": "345408",
+    "bggRating": 7.3,
+    "yearPublished": 2021
   },
   {
     "ownerType": "dharitri",
@@ -247,7 +277,7 @@ export const GAMES: BoardGame[] = [
     "name": "Chatpate",
     "videoUrl": "https://www.youtube.com/watch?v=3snHEMIlGBI",
     "createdAt": "2026-08-24T09:37:08.347Z",
-    "image": "/chatpate.jpeg",
+    "image": "/thumbnails/chatpate.jpeg",
     "source": "custom",
     "owners": [
       {
@@ -255,14 +285,14 @@ export const GAMES: BoardGame[] = [
         "ownerType": "dharitri"
       }
     ],
-    "thumbnail": "/chatpate.jpeg",
+    "thumbnail": "/thumbnails/chatpate.jpeg",
     "owner": "Dharitri Cafe"
   },
   {
     "minPlayers": 2,
     "name": "Chess",
-    "image": "/chess.jpg",
-    "thumbnail": "/chess.jpg",
+    "image": "/thumbnails/chess.jpg",
+    "thumbnail": "/thumbnails/chess.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=fKxG8KjH1MH",
     "playingTime": 30,
     "categories": [
@@ -279,7 +309,10 @@ export const GAMES: BoardGame[] = [
         "ownerType": "parag",
         "name": "Parag"
       }
-    ]
+    ],
+    "bggId": "171",
+    "bggRating": 7.2,
+    "yearPublished": 1475
   },
   {
     "videoUrl": "https://www.youtube.com/watch?v=3snHEMIlGBI",
@@ -289,7 +322,7 @@ export const GAMES: BoardGame[] = [
     "categories": [
       "Standalone"
     ],
-    "image": "/snakes_and_ladders.png",
+    "image": "/thumbnails/chutes-and-ladders.jpg",
     "owners": [
       {
         "ownerType": "parag",
@@ -300,13 +333,15 @@ export const GAMES: BoardGame[] = [
     "createdAt": "2026-08-24T09:37:08.348Z",
     "id": "chutes-and-ladders",
     "source": "custom",
-    "thumbnail": "/snakes_and_ladders.png",
+    "thumbnail": "/thumbnails/chutes-and-ladders.jpg",
     "maxPlayers": 6,
-    "owner": "Parag"
+    "owner": "Parag",
+    "bggId": "5432",
+    "bggRating": 2.9
   },
   {
     "minPlayers": 2,
-    "image": "/clank.webp",
+    "image": "/thumbnails/clank-a-deck-building-adventure.jpg",
     "ownerType": "parag",
     "owners": [
       {
@@ -325,17 +360,20 @@ export const GAMES: BoardGame[] = [
     "owner": "Parag",
     "source": "custom",
     "maxPlayers": 4,
-    "thumbnail": "/clank.webp"
+    "thumbnail": "/thumbnails/clank-a-deck-building-adventure.jpg",
+    "bggId": "201808",
+    "bggRating": 7.8,
+    "yearPublished": 2016
   },
   {
     "name": "Codenames",
     "maxPlayers": 8,
     "id": "codenames",
     "createdAt": "2026-08-24T09:37:08.347Z",
-    "image": "/codenames.jpeg",
+    "image": "/thumbnails/codenames.jpg",
     "source": "custom",
     "ownerType": "multiple",
-    "thumbnail": "/codenames.jpeg",
+    "thumbnail": "/thumbnails/codenames.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=J8RWBooJivg",
     "categories": [
       "Standalone"
@@ -352,7 +390,10 @@ export const GAMES: BoardGame[] = [
       }
     ],
     "playingTime": 15,
-    "owner": "Dharitri Cafe & Parag"
+    "owner": "Dharitri Cafe & Parag",
+    "bggId": "178900",
+    "bggRating": 7.5,
+    "yearPublished": 2015
   },
   {
     "owners": [
@@ -362,17 +403,20 @@ export const GAMES: BoardGame[] = [
       }
     ],
     "source": "custom",
-    "thumbnail": "/coup.jpg",
+    "thumbnail": "/thumbnails/coup.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=lPlBDZnxHQA",
     "createdAt": "2026-08-24T09:37:08.347Z",
     "id": "coup",
     "name": "Coup",
     "owner": "Dharitri Cafe",
     "ownerType": "dharitri",
-    "image": "/coup.jpg"
+    "image": "/thumbnails/coup.jpg",
+    "bggId": "131357",
+    "bggRating": 7,
+    "yearPublished": 2012
   },
   {
-    "thumbnail": "/dominion.jpg",
+    "thumbnail": "/thumbnails/dominion.jpg",
     "owner": "Parag",
     "maxPlayers": 4,
     "name": "Dominion",
@@ -384,7 +428,7 @@ export const GAMES: BoardGame[] = [
     ],
     "videoUrl": "https://www.youtube.com/watch?v=52Yf3EmsAWE",
     "createdAt": "2026-08-24T09:37:08.348Z",
-    "image": "/dominion.jpg",
+    "image": "/thumbnails/dominion.jpg",
     "owners": [
       {
         "name": "Parag",
@@ -392,12 +436,15 @@ export const GAMES: BoardGame[] = [
       }
     ],
     "minPlayers": 2,
-    "ownerType": "parag"
+    "ownerType": "parag",
+    "bggId": "36218",
+    "bggRating": 7.6,
+    "yearPublished": 2008
   },
   {
-    "image": "/flamecraft.jpg",
+    "image": "/thumbnails/flamecraft.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=Fj-cSmU7v_Q",
-    "thumbnail": "/flamecraft.jpg",
+    "thumbnail": "/thumbnails/flamecraft.jpg",
     "source": "custom",
     "maxPlayers": 5,
     "playingTime": 60,
@@ -415,7 +462,10 @@ export const GAMES: BoardGame[] = [
         "name": "Parag",
         "ownerType": "parag"
       }
-    ]
+    ],
+    "bggId": "336986",
+    "bggRating": 7.4,
+    "yearPublished": 2022
   },
   {
     "source": "custom",
@@ -423,10 +473,10 @@ export const GAMES: BoardGame[] = [
     "categories": [
       "Standalone"
     ],
-    "image": "/flamecraft_dual.jpeg",
+    "image": "/thumbnails/flamecraft-duals.png",
     "minPlayers": 1,
     "id": "flamecraft-duals",
-    "thumbnail": "/flamecraft_dual.jpeg",
+    "thumbnail": "/thumbnails/flamecraft-duals.png",
     "maxPlayers": 2,
     "videoUrl": "https://www.youtube.com/watch?v=xm4FbFySIvY",
     "owners": [
@@ -438,7 +488,10 @@ export const GAMES: BoardGame[] = [
     "ownerType": "parag",
     "name": "Flamecraft Duals",
     "createdAt": "2026-08-24T09:37:08.348Z",
-    "owner": "Parag"
+    "owner": "Parag",
+    "bggId": "439305",
+    "bggRating": 7.9,
+    "yearPublished": 2025
   },
   {
     "ownerType": "parag",
@@ -447,7 +500,7 @@ export const GAMES: BoardGame[] = [
     "source": "custom",
     "maxPlayers": 5,
     "createdAt": "2026-08-24T09:37:08.348Z",
-    "image": "/fletter.jpg",
+    "image": "/thumbnails/fletter.jpg",
     "playingTime": 30,
     "minPlayers": 2,
     "videoUrl": "https://www.youtube.com/watch?v=q1OSR4EYQNo",
@@ -458,10 +511,13 @@ export const GAMES: BoardGame[] = [
         "name": "Parag"
       }
     ],
-    "thumbnail": "/fletter.jpg",
+    "thumbnail": "/thumbnails/fletter.jpg",
     "categories": [
       "Standalone"
-    ]
+    ],
+    "bggId": "287983",
+    "bggRating": 5.8,
+    "yearPublished": 2015
   },
   {
     "ownerType": "parag",
@@ -481,16 +537,19 @@ export const GAMES: BoardGame[] = [
       }
     ],
     "id": "great-shakespearean-deaths-card-game",
-    "image": "/shakespearean_death.jpg",
-    "thumbnail": "/shakespearean_death.jpg",
+    "image": "/thumbnails/great-shakespearean-deaths-card-game.jpg",
+    "thumbnail": "/thumbnails/great-shakespearean-deaths-card-game.jpg",
     "maxPlayers": 5,
-    "videoUrl": "https://www.youtube.com/watch?v=FkuqYtE1rw0"
+    "videoUrl": "https://www.youtube.com/watch?v=FkuqYtE1rw0",
+    "bggId": "207274",
+    "bggRating": 4.3,
+    "yearPublished": 2016
   },
   {
     "id": "harmonies",
     "source": "custom",
     "maxPlayers": 4,
-    "thumbnail": "/harmonies.png",
+    "thumbnail": "/thumbnails/harmonies.png",
     "owner": "Dharitri Cafe & Parag",
     "name": "Harmonies",
     "owners": [
@@ -510,8 +569,11 @@ export const GAMES: BoardGame[] = [
     "createdAt": "2026-08-24T09:37:08.347Z",
     "playingTime": 45,
     "ownerType": "multiple",
-    "image": "/harmonies.png",
-    "minPlayers": 1
+    "image": "/thumbnails/harmonies.png",
+    "minPlayers": 1,
+    "bggId": "414317",
+    "bggRating": 8,
+    "yearPublished": 2024
   },
   {
     "owners": [
@@ -526,15 +588,18 @@ export const GAMES: BoardGame[] = [
     ],
     "createdAt": "2026-08-24T09:37:08.348Z",
     "minPlayers": 1,
-    "image": "/heros_realm.jpg",
+    "image": "/thumbnails/hero-s-realms.png",
     "id": "hero-s-realms",
     "ownerType": "parag",
     "source": "custom",
     "maxPlayers": 2,
-    "thumbnail": "/heros_realm.jpg",
+    "thumbnail": "/thumbnails/hero-s-realms.png",
     "owner": "Parag",
     "name": "Hero's Realms",
-    "videoUrl": "https://www.youtube.com/watch?v=g4boAtA9p3w"
+    "videoUrl": "https://www.youtube.com/watch?v=g4boAtA9p3w",
+    "bggId": "198994",
+    "bggRating": 7.5,
+    "yearPublished": 2016
   },
   {
     "owner": "Parag",
@@ -545,9 +610,9 @@ export const GAMES: BoardGame[] = [
     "playingTime": 30,
     "source": "custom",
     "ownerType": "parag",
-    "thumbnail": "/jaipur.jpg",
+    "thumbnail": "/thumbnails/jaipur.jpg",
     "minPlayers": 2,
-    "image": "/jaipur.jpg",
+    "image": "/thumbnails/jaipur.jpg",
     "categories": [
       "Standalone"
     ],
@@ -557,7 +622,10 @@ export const GAMES: BoardGame[] = [
         "ownerType": "parag"
       }
     ],
-    "name": "Jaipur"
+    "name": "Jaipur",
+    "bggId": "54043",
+    "bggRating": 7.5,
+    "yearPublished": 2009
   },
   {
     "owners": [
@@ -576,17 +644,20 @@ export const GAMES: BoardGame[] = [
     "playingTime": 60,
     "source": "custom",
     "id": "just-one",
-    "thumbnail": "/just_one.jpg",
-    "image": "/just_one.jpg",
+    "thumbnail": "/thumbnails/just-one.png",
+    "image": "/thumbnails/just-one.png",
     "categories": [
       "Standalone"
-    ]
+    ],
+    "bggId": "254640",
+    "bggRating": 7.6,
+    "yearPublished": 2018
   },
   {
-    "thumbnail": "/keep_talking.jpg",
+    "thumbnail": "/thumbnails/keep-talking-and-nobody-explodes.jpg",
     "playingTime": 30,
     "videoUrl": "https://www.youtube.com/watch?v=1t5o68A0K6A",
-    "image": "/keep_talking.jpg",
+    "image": "/thumbnails/keep-talking-and-nobody-explodes.jpg",
     "maxPlayers": 6,
     "name": "Keep Talking and Nobody Explodes",
     "owners": [
@@ -612,7 +683,7 @@ export const GAMES: BoardGame[] = [
       "Standalone"
     ],
     "ownerType": "parag",
-    "image": "/kingdomino.png",
+    "image": "/thumbnails/kingdomino.png",
     "videoUrl": "https://www.youtube.com/watch?v=WUTc1AF3a0I",
     "createdAt": "2026-08-24T09:37:08.348Z",
     "minPlayers": 2,
@@ -627,7 +698,10 @@ export const GAMES: BoardGame[] = [
       }
     ],
     "name": "Kingdomino",
-    "thumbnail": "/kingdomino.png"
+    "thumbnail": "/thumbnails/kingdomino.png",
+    "bggId": "204583",
+    "bggRating": 7.3,
+    "yearPublished": 2016
   },
   {
     "owners": [
@@ -637,7 +711,7 @@ export const GAMES: BoardGame[] = [
       }
     ],
     "id": "lakshadweep",
-    "thumbnail": "/lakshadweep.jpg",
+    "thumbnail": "/thumbnails/lakshadweep.jpg",
     "minPlayers": 2,
     "categories": [
       "Standalone"
@@ -649,11 +723,14 @@ export const GAMES: BoardGame[] = [
     "source": "custom",
     "playingTime": 45,
     "ownerType": "parag",
-    "image": "/lakshadweep.jpg",
-    "maxPlayers": 2
+    "image": "/thumbnails/lakshadweep.jpg",
+    "maxPlayers": 2,
+    "bggId": "373877",
+    "bggRating": 7.9,
+    "yearPublished": 2023
   },
   {
-    "thumbnail": "/loot.jpeg",
+    "thumbnail": "/thumbnails/loot.jpg",
     "maxPlayers": 8,
     "owners": [
       {
@@ -665,7 +742,7 @@ export const GAMES: BoardGame[] = [
         "name": "Parag"
       }
     ],
-    "image": "/loot.jpeg",
+    "image": "/thumbnails/loot.jpg",
     "playingTime": 20,
     "name": "Loot",
     "videoUrl": "https://www.youtube.com/watch?v=WUTc1AF3a0I",
@@ -677,7 +754,10 @@ export const GAMES: BoardGame[] = [
       "Standalone"
     ],
     "ownerType": "multiple",
-    "owner": "Dharitri Cafe & Parag"
+    "owner": "Dharitri Cafe & Parag",
+    "bggId": "770",
+    "bggRating": 6.3,
+    "yearPublished": 1992
   },
   {
     "source": "custom",
@@ -703,22 +783,25 @@ export const GAMES: BoardGame[] = [
       "Standalone"
     ],
     "minPlayers": 2,
-    "thumbnail": "/masala_lab.jpg",
-    "image": "/masala_lab.jpg"
+    "thumbnail": "/thumbnails/masala-lab.jpg",
+    "image": "/thumbnails/masala-lab.jpg",
+    "bggId": "400573",
+    "bggRating": 7.7,
+    "yearPublished": 2024
   },
   {
     "playingTime": 60,
     "maxPlayers": 99,
     "owner": "Parag",
     "videoUrl": "https://www.youtube.com/watch?v=lPlBDZnxHQA",
-    "thumbnail": "/mind_the_gap.jpg",
+    "thumbnail": "/thumbnails/mind-the-gap.jpg",
     "owners": [
       {
         "name": "Parag",
         "ownerType": "parag"
       }
     ],
-    "image": "/mind_the_gap.jpg",
+    "image": "/thumbnails/mind-the-gap.jpg",
     "createdAt": "2026-08-24T09:37:08.348Z",
     "name": "Mind the Gap",
     "categories": [
@@ -727,13 +810,16 @@ export const GAMES: BoardGame[] = [
     "ownerType": "parag",
     "minPlayers": 2,
     "id": "mind-the-gap",
-    "source": "custom"
+    "source": "custom",
+    "bggId": "323377",
+    "bggRating": 5.7,
+    "yearPublished": 2020
   },
   {
     "categories": [
       "Standalone"
     ],
-    "thumbnail": "/mysterium_park.jpg",
+    "thumbnail": "/thumbnails/mysterium-park.jpg",
     "minPlayers": 2,
     "source": "custom",
     "owner": "Parag",
@@ -744,13 +830,16 @@ export const GAMES: BoardGame[] = [
     "createdAt": "2026-08-24T09:37:08.348Z",
     "videoUrl": "https://www.youtube.com/watch?v=QUBXDnY18n0",
     "ownerType": "parag",
-    "image": "/mysterium_park.jpg",
+    "image": "/thumbnails/mysterium-park.jpg",
     "owners": [
       {
         "ownerType": "parag",
         "name": "Parag"
       }
-    ]
+    ],
+    "bggId": "301767",
+    "bggRating": 7,
+    "yearPublished": 2020
   },
   {
     "owners": [
@@ -764,7 +853,7 @@ export const GAMES: BoardGame[] = [
     "videoUrl": "https://www.youtube.com/watch?v=xm4FbFySIvY",
     "owner": "Parag",
     "playingTime": 30,
-    "thumbnail": "/next station london.jpeg",
+    "thumbnail": "/thumbnails/next-station-london.jpg",
     "id": "next-station-london",
     "source": "custom",
     "ownerType": "parag",
@@ -773,7 +862,10 @@ export const GAMES: BoardGame[] = [
     ],
     "createdAt": "2026-08-24T09:37:08.348Z",
     "minPlayers": 1,
-    "image": "/next station london.jpeg"
+    "image": "/thumbnails/next-station-london.jpg",
+    "bggId": "353545",
+    "bggRating": 7.4,
+    "yearPublished": 2022
   },
   {
     "minPlayers": 2,
@@ -791,15 +883,18 @@ export const GAMES: BoardGame[] = [
       "Standalone"
     ],
     "videoUrl": "https://www.youtube.com/watch?v=q1OSR4EYQNo",
-    "image": "/othello.jpg",
+    "image": "/thumbnails/othello.jpg",
     "id": "othello",
     "name": "Othello",
-    "thumbnail": "/othello.jpg",
+    "thumbnail": "/thumbnails/othello.jpg",
     "source": "custom",
-    "maxPlayers": 2
+    "maxPlayers": 2,
+    "bggId": "2389",
+    "bggRating": 6.2,
+    "yearPublished": 1883
   },
   {
-    "thumbnail": "/pachisi.webp",
+    "thumbnail": "/thumbnails/pachisi.jpg",
     "playingTime": 30,
     "owner": "Parag",
     "minPlayers": 2,
@@ -810,7 +905,7 @@ export const GAMES: BoardGame[] = [
     "source": "custom",
     "videoUrl": "https://www.youtube.com/watch?v=FkuqYtE1rw0",
     "createdAt": "2026-08-24T09:37:08.348Z",
-    "image": "/pachisi.webp",
+    "image": "/thumbnails/pachisi.jpg",
     "name": "Pachisi",
     "owners": [
       {
@@ -819,7 +914,10 @@ export const GAMES: BoardGame[] = [
       }
     ],
     "maxPlayers": 6,
-    "ownerType": "parag"
+    "ownerType": "parag",
+    "bggId": "2136",
+    "bggRating": 4.5,
+    "yearPublished": 400
   },
   {
     "ownerType": "dharitri",
@@ -833,18 +931,18 @@ export const GAMES: BoardGame[] = [
     ],
     "id": "playing-cards",
     "createdAt": "2026-08-24T09:37:08.347Z",
-    "image": "/playing_cards.jpeg",
+    "image": "/thumbnails/playing-cards.jpeg",
     "name": "Playing Cards",
-    "thumbnail": "/playing_cards.jpeg"
+    "thumbnail": "/thumbnails/playing-cards.jpeg"
   },
   {
     "source": "custom",
     "maxPlayers": 5,
     "playingTime": 20,
     "name": "Risk Strike",
-    "image": "/risk.jpg",
+    "image": "/thumbnails/risk-strike.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=l-AyukgblK4",
-    "thumbnail": "/risk.jpg",
+    "thumbnail": "/thumbnails/risk-strike.jpg",
     "ownerType": "parag",
     "owners": [
       {
@@ -858,7 +956,10 @@ export const GAMES: BoardGame[] = [
     "createdAt": "2026-08-24T09:37:08.348Z",
     "id": "risk-strike",
     "minPlayers": 2,
-    "owner": "Parag"
+    "owner": "Parag",
+    "bggId": "394144",
+    "bggRating": 6.8,
+    "yearPublished": 2023
   },
   {
     "source": "custom",
@@ -870,7 +971,7 @@ export const GAMES: BoardGame[] = [
     ],
     "owner": "Parag",
     "ownerType": "parag",
-    "thumbnail": "/sagrada.jpeg",
+    "thumbnail": "/thumbnails/sagrada.png",
     "owners": [
       {
         "ownerType": "parag",
@@ -878,10 +979,13 @@ export const GAMES: BoardGame[] = [
       }
     ],
     "name": "Sagrada",
-    "image": "/sagrada.jpeg",
+    "image": "/thumbnails/sagrada.png",
     "playingTime": 45,
     "videoUrl": "https://www.youtube.com/watch?v=g4boAtA9p3w",
-    "maxPlayers": 4
+    "maxPlayers": 4,
+    "bggId": "199561",
+    "bggRating": 7.5,
+    "yearPublished": 2017
   },
   {
     "createdAt": "2026-08-24T09:37:08.348Z",
@@ -894,7 +998,7 @@ export const GAMES: BoardGame[] = [
     "minPlayers": 2,
     "owner": "Parag",
     "maxPlayers": 6,
-    "thumbnail": "/scattergories.png",
+    "thumbnail": "/thumbnails/scattergories.jpg",
     "owners": [
       {
         "name": "Parag",
@@ -903,17 +1007,20 @@ export const GAMES: BoardGame[] = [
     ],
     "name": "Scattergories",
     "videoUrl": "https://www.youtube.com/watch?v=NlygiFc_xNY",
-    "image": "/scattergories.png",
-    "id": "scattergories"
+    "image": "/thumbnails/scattergories.jpg",
+    "id": "scattergories",
+    "bggId": "2381",
+    "bggRating": 6.3,
+    "yearPublished": 1988
   },
   {
     "name": "Scrabble",
     "owner": "Parag",
     "maxPlayers": 4,
     "source": "custom",
-    "thumbnail": "/scrabble.webp",
+    "thumbnail": "/thumbnails/scrabble.jpg",
     "ownerType": "parag",
-    "image": "/scrabble.webp",
+    "image": "/thumbnails/scrabble.jpg",
     "categories": [
       "Standalone"
     ],
@@ -927,19 +1034,22 @@ export const GAMES: BoardGame[] = [
         "ownerType": "parag",
         "name": "Parag"
       }
-    ]
+    ],
+    "bggId": "320",
+    "bggRating": 6.3,
+    "yearPublished": 1948
   },
   {
     "maxPlayers": 4,
     "id": "sea-salt-paper-extra-pepper",
     "videoUrl": "https://www.youtube.com/watch?v=WUTc1AF3a0I",
     "createdAt": "2026-08-24T09:37:08.348Z",
-    "image": "/sea salt paper.webp",
+    "image": "/thumbnails/sea-salt-paper.jpg",
     "source": "custom",
     "ownerType": "parag",
     "playingTime": 45,
     "owner": "Parag",
-    "thumbnail": "/sea salt paper.webp",
+    "thumbnail": "/thumbnails/sea-salt-paper.jpg",
     "categories": [
       "Expansion"
     ],
@@ -950,7 +1060,10 @@ export const GAMES: BoardGame[] = [
         "ownerType": "parag"
       }
     ],
-    "name": "Sea Salt & Paper: Extra Pepper"
+    "name": "Sea Salt & Paper: Extra Pepper",
+    "bggId": "442250",
+    "bggRating": 8,
+    "yearPublished": 2025
   },
   {
     "maxPlayers": 12,
@@ -965,8 +1078,8 @@ export const GAMES: BoardGame[] = [
         "ownerType": "parag"
       }
     ],
-    "thumbnail": "/sequence.jpg",
-    "image": "/sequence.jpg",
+    "thumbnail": "/thumbnails/sequence.jpg",
+    "image": "/thumbnails/sequence.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=oihdM_Rj44g",
     "ownerType": "multiple",
     "categories": [
@@ -977,7 +1090,10 @@ export const GAMES: BoardGame[] = [
     "playingTime": 30,
     "owner": "Dharitri Cafe & Parag",
     "minPlayers": 2,
-    "createdAt": "2026-08-24T09:37:08.348Z"
+    "createdAt": "2026-08-24T09:37:08.348Z",
+    "bggId": "2375",
+    "bggRating": 6.2,
+    "yearPublished": 1982
   },
   {
     "videoUrl": "https://www.youtube.com/watch?v=FkuqYtE1rw0",
@@ -985,7 +1101,7 @@ export const GAMES: BoardGame[] = [
       "Standalone"
     ],
     "ownerType": "parag",
-    "playingTime": 90,
+    "playingTime": 120,
     "owners": [
       {
         "ownerType": "parag",
@@ -994,13 +1110,16 @@ export const GAMES: BoardGame[] = [
     ],
     "owner": "Parag",
     "name": "Shasn",
-    "minPlayers": 2,
+    "minPlayers": 3,
     "createdAt": "2026-08-24T09:37:08.348Z",
     "maxPlayers": 5,
     "id": "shasn",
     "source": "custom",
-    "thumbnail": "/shasn.jpeg",
-    "image": "/shasn.jpeg"
+    "thumbnail": "/thumbnails/shasn.png",
+    "image": "/thumbnails/shasn.png",
+    "bggId": "257305",
+    "bggRating": 7.3,
+    "yearPublished": 2021
   },
   {
     "createdAt": "2026-08-24T09:37:08.348Z",
@@ -1012,10 +1131,10 @@ export const GAMES: BoardGame[] = [
         "ownerType": "parag"
       }
     ],
-    "image": "/sky team.jpg",
+    "image": "/thumbnails/sky-team.jpg",
     "ownerType": "parag",
     "owner": "Parag",
-    "thumbnail": "/sky team.jpg",
+    "thumbnail": "/thumbnails/sky-team.jpg",
     "source": "custom",
     "categories": [
       "Standalone"
@@ -1023,7 +1142,10 @@ export const GAMES: BoardGame[] = [
     "playingTime": 20,
     "id": "sky-team",
     "minPlayers": 2,
-    "name": "Sky Team"
+    "name": "Sky Team",
+    "bggId": "373106",
+    "bggRating": 8.1,
+    "yearPublished": 2023
   },
   {
     "categories": [
@@ -1031,8 +1153,8 @@ export const GAMES: BoardGame[] = [
     ],
     "source": "custom",
     "videoUrl": "https://www.youtube.com/watch?v=XsP6LvZQpLk",
-    "image": "/splendor.png",
-    "thumbnail": "/splendor.png",
+    "image": "/thumbnails/splendor.png",
+    "thumbnail": "/thumbnails/splendor.png",
     "minPlayers": 2,
     "playingTime": 30,
     "owners": [
@@ -1046,7 +1168,10 @@ export const GAMES: BoardGame[] = [
     "maxPlayers": 4,
     "createdAt": "2026-08-24T09:37:08.348Z",
     "owner": "Parag",
-    "id": "splendor"
+    "id": "splendor",
+    "bggId": "148228",
+    "bggRating": 7.4,
+    "yearPublished": 2014
   },
   {
     "source": "custom",
@@ -1064,16 +1189,19 @@ export const GAMES: BoardGame[] = [
         "name": "Parag"
       }
     ],
-    "thumbnail": "/splendor duel.jpeg",
+    "thumbnail": "/thumbnails/splendor-duel.jpg",
     "id": "splendor-duel",
     "name": "Splendor Duel",
     "maxPlayers": 2,
     "videoUrl": "https://www.youtube.com/watch?v=9M5_B9jmxvQ",
-    "image": "/splendor duel.jpeg"
+    "image": "/thumbnails/splendor-duel.jpg",
+    "bggId": "364073",
+    "bggRating": 7.9,
+    "yearPublished": 2022
   },
   {
-    "thumbnail": "/dobble.jpg",
-    "image": "/dobble.jpg",
+    "thumbnail": "/thumbnails/spot-it.png",
+    "image": "/thumbnails/spot-it.png",
     "maxPlayers": 8,
     "playingTime": 15,
     "owners": [
@@ -1092,7 +1220,10 @@ export const GAMES: BoardGame[] = [
     "videoUrl": "https://www.youtube.com/watch?v=3snHEMIlGBI",
     "minPlayers": 2,
     "id": "spot-it",
-    "ownerType": "parag"
+    "ownerType": "parag",
+    "bggId": "63268",
+    "bggRating": 6.5,
+    "yearPublished": 2009
   },
   {
     "playingTime": 20,
@@ -1107,29 +1238,32 @@ export const GAMES: BoardGame[] = [
         "ownerType": "parag"
       }
     ],
-    "image": "/taboo.png",
+    "image": "/thumbnails/taboo.jpg",
     "id": "taboo",
     "ownerType": "multiple",
     "videoUrl": "https://www.youtube.com/watch?v=QUBXDnY18n0",
     "maxPlayers": 10,
     "owner": "Dharitri Cafe & Parag",
-    "thumbnail": "/taboo.png",
+    "thumbnail": "/thumbnails/taboo.jpg",
     "source": "custom",
     "minPlayers": 4,
     "categories": [
       "Standalone"
     ],
-    "name": "Taboo"
+    "name": "Taboo",
+    "bggId": "1111",
+    "bggRating": 6.3,
+    "yearPublished": 1989
   },
   {
     "owner": "Dharitri Cafe & Parag",
     "playingTime": 30,
-    "thumbnail": "/taco_cat.jpeg",
+    "thumbnail": "/thumbnails/taco-cat-goat-cheese-pizza.png",
     "source": "custom",
     "maxPlayers": 8,
     "createdAt": "2026-08-24T09:37:08.347Z",
     "minPlayers": 2,
-    "image": "/taco_cat.jpeg",
+    "image": "/thumbnails/taco-cat-goat-cheese-pizza.png",
     "id": "taco-cat-goat-cheese-pizza",
     "categories": [
       "Standalone"
@@ -1146,7 +1280,10 @@ export const GAMES: BoardGame[] = [
         "name": "Parag"
       }
     ],
-    "videoUrl": "https://www.youtube.com/watch?v=oihdM_Rj44g"
+    "videoUrl": "https://www.youtube.com/watch?v=oihdM_Rj44g",
+    "bggId": "253664",
+    "bggRating": 6.5,
+    "yearPublished": 2018
   },
   {
     "categories": [
@@ -1168,8 +1305,11 @@ export const GAMES: BoardGame[] = [
       }
     ],
     "id": "terraforming-mars",
-    "thumbnail": "/terraforming mars.jpg",
-    "image": "/terraforming mars.jpg"
+    "thumbnail": "/thumbnails/terraforming-mars.jpg",
+    "image": "/thumbnails/terraforming-mars.jpg",
+    "bggId": "167791",
+    "bggRating": 8.3,
+    "yearPublished": 2016
   },
   {
     "name": "The Crew: Mission Deep Sea",
@@ -1187,12 +1327,15 @@ export const GAMES: BoardGame[] = [
     "ownerType": "parag",
     "owner": "Parag",
     "maxPlayers": 5,
-    "thumbnail": "/crew.jpg",
+    "thumbnail": "/thumbnails/the-crew-mission-deep-sea.jpg",
     "id": "the-crew-mission-deep-sea",
     "source": "custom",
     "playingTime": 20,
     "videoUrl": "https://www.youtube.com/watch?v=QUBXDnY18n0",
-    "image": "/crew.jpg"
+    "image": "/thumbnails/the-crew-mission-deep-sea.jpg",
+    "bggId": "324856",
+    "bggRating": 8,
+    "yearPublished": 2021
   },
   {
     "minPlayers": 2,
@@ -1201,7 +1344,7 @@ export const GAMES: BoardGame[] = [
     "createdAt": "2026-08-24T09:37:08.348Z",
     "ownerType": "parag",
     "videoUrl": "https://www.youtube.com/watch?v=7u2q43FvO4A",
-    "image": "/life.jpg",
+    "image": "/thumbnails/the-game-of-life.jpg",
     "categories": [
       "Standalone"
     ],
@@ -1211,14 +1354,17 @@ export const GAMES: BoardGame[] = [
         "ownerType": "parag"
       }
     ],
-    "thumbnail": "/life.jpg",
+    "thumbnail": "/thumbnails/the-game-of-life.jpg",
     "owner": "Parag",
     "maxPlayers": 6,
     "name": "The Game of Life",
-    "id": "the-game-of-life"
+    "id": "the-game-of-life",
+    "bggId": "2921",
+    "bggRating": 4.4,
+    "yearPublished": 1960
   },
   {
-    "image": "/lotr_duel.jpg",
+    "image": "/thumbnails/the-lord-of-the-rings-duel-for-middle-earth.jpg",
     "minPlayers": 2,
     "ownerType": "parag",
     "source": "custom",
@@ -1237,11 +1383,14 @@ export const GAMES: BoardGame[] = [
     ],
     "owner": "Parag",
     "videoUrl": "https://www.youtube.com/watch?v=XsP6LvZQpLk",
-    "thumbnail": "/lotr_duel.jpg",
-    "maxPlayers": 2
+    "thumbnail": "/thumbnails/the-lord-of-the-rings-duel-for-middle-earth.jpg",
+    "maxPlayers": 2,
+    "bggId": "421006",
+    "bggRating": 8.4,
+    "yearPublished": 2024
   },
   {
-    "thumbnail": "/the_mind.jpeg",
+    "thumbnail": "/thumbnails/the-mind.png",
     "categories": [
       "Standalone"
     ],
@@ -1258,10 +1407,13 @@ export const GAMES: BoardGame[] = [
         "ownerType": "parag"
       }
     ],
-    "image": "/the_mind.jpeg",
+    "image": "/thumbnails/the-mind.png",
     "id": "the-mind",
     "videoUrl": "https://www.youtube.com/watch?v=3snHEMIlGBI",
-    "ownerType": "parag"
+    "ownerType": "parag",
+    "bggId": "244992",
+    "bggRating": 6.7,
+    "yearPublished": 2018
   },
   {
     "ownerType": "parag",
@@ -1271,7 +1423,7 @@ export const GAMES: BoardGame[] = [
     "createdAt": "2026-08-24T09:37:08.348Z",
     "minPlayers": 2,
     "source": "custom",
-    "image": "/ticket to ride.jpg",
+    "image": "/thumbnails/ticket-to-ride.jpg",
     "name": "Ticket to Ride",
     "maxPlayers": 5,
     "id": "ticket-to-ride",
@@ -1283,11 +1435,14 @@ export const GAMES: BoardGame[] = [
     ],
     "playingTime": 60,
     "videoUrl": "https://www.youtube.com/watch?v=FkuqYtE1rw0",
-    "thumbnail": "/ticket to ride.jpg",
-    "owner": "Parag"
+    "thumbnail": "/thumbnails/ticket-to-ride.jpg",
+    "owner": "Parag",
+    "bggId": "9209",
+    "bggRating": 7.4,
+    "yearPublished": 2004
   },
   {
-    "image": "/trio.jpeg",
+    "image": "/thumbnails/trio.jpg",
     "ownerType": "dharitri",
     "owner": "Dharitri Cafe",
     "videoUrl": "https://www.youtube.com/watch?v=9M5_B9jmxvQ",
@@ -1295,13 +1450,16 @@ export const GAMES: BoardGame[] = [
     "id": "trio",
     "createdAt": "2026-08-24T09:37:08.347Z",
     "source": "custom",
-    "thumbnail": "/trio.jpeg",
+    "thumbnail": "/thumbnails/trio.jpg",
     "owners": [
       {
         "name": "Dharitri Cafe",
         "ownerType": "dharitri"
       }
-    ]
+    ],
+    "bggId": "352515",
+    "bggRating": 7.4,
+    "yearPublished": 2021
   },
   {
     "ownerType": "dharitri",
@@ -1317,8 +1475,11 @@ export const GAMES: BoardGame[] = [
     "name": "Ultimate Werewolf",
     "owner": "Dharitri Cafe",
     "id": "ultimate-werewolf",
-    "thumbnail": "/werewolves.png",
-    "image": "/werewolves.png"
+    "thumbnail": "/thumbnails/ultimate-werewolf.png",
+    "image": "/thumbnails/ultimate-werewolf.png",
+    "bggId": "152242",
+    "bggRating": 7,
+    "yearPublished": 2014
   },
   {
     "source": "custom",
@@ -1326,8 +1487,8 @@ export const GAMES: BoardGame[] = [
       "Standalone"
     ],
     "videoUrl": "https://www.youtube.com/watch?v=l-AyukgblK4",
-    "thumbnail": "/uninvited guests.jpg",
-    "image": "/uninvited guests.jpg",
+    "thumbnail": "/thumbnails/uninvited-guests-at-a-wedding.jpg",
+    "image": "/thumbnails/uninvited-guests-at-a-wedding.jpg",
     "minPlayers": 2,
     "owners": [
       {
@@ -1341,10 +1502,13 @@ export const GAMES: BoardGame[] = [
     "owner": "Parag",
     "createdAt": "2026-08-24T09:37:08.348Z",
     "name": "Uninvited Guests at a Wedding",
-    "id": "uninvited-guests-at-a-wedding"
+    "id": "uninvited-guests-at-a-wedding",
+    "bggId": "448958",
+    "bggRating": 7,
+    "yearPublished": 2025
   },
   {
-    "thumbnail": "/uno_classic.png",
+    "thumbnail": "/thumbnails/uno-classic.jpg",
     "name": "UNO Classic",
     "owners": [
       {
@@ -1355,16 +1519,19 @@ export const GAMES: BoardGame[] = [
     "id": "uno-classic",
     "source": "custom",
     "createdAt": "2026-08-24T09:37:08.347Z",
-    "image": "/uno_classic.png",
+    "image": "/thumbnails/uno-classic.jpg",
     "videoUrl": "https://www.youtube.com/watch?v=FkuqYtE1rw0",
     "ownerType": "dharitri",
-    "owner": "Dharitri Cafe"
+    "owner": "Dharitri Cafe",
+    "bggId": "2223",
+    "bggRating": 5.5,
+    "yearPublished": 1971
   },
   {
     "createdAt": "2026-08-24T09:37:08.347Z",
-    "image": "/uno_flip.jpg",
+    "image": "/thumbnails/uno-flip.jpg",
     "name": "UNO Flip",
-    "thumbnail": "/uno_flip.jpg",
+    "thumbnail": "/thumbnails/uno-flip.jpg",
     "owner": "Dharitri Cafe",
     "id": "uno-flip",
     "source": "custom",
@@ -1375,7 +1542,10 @@ export const GAMES: BoardGame[] = [
       }
     ],
     "ownerType": "dharitri",
-    "videoUrl": "https://www.youtube.com/watch?v=l-AyukgblK4"
+    "videoUrl": "https://www.youtube.com/watch?v=l-AyukgblK4",
+    "bggId": "271460",
+    "bggRating": 6.3,
+    "yearPublished": 2019
   },
   {
     "ownerType": "dharitri",
@@ -1390,8 +1560,11 @@ export const GAMES: BoardGame[] = [
     "createdAt": "2026-08-24T09:37:08.347Z",
     "owner": "Dharitri Cafe",
     "name": "UNO - Show 'Em No Mercy",
-    "thumbnail": "/uno_no_mercy.jpg",
+    "thumbnail": "/thumbnails/uno-show-em-no-mercy.jpg",
     "id": "uno-show-em-no-mercy",
-    "image": "/uno_no_mercy.jpg"
+    "image": "/thumbnails/uno-show-em-no-mercy.jpg",
+    "bggId": "399088",
+    "bggRating": 6.1,
+    "yearPublished": 2023
   }
 ];
