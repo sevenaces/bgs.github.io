@@ -123,3 +123,6 @@ We also spent some time with political intrigue, in a game of deception, lying a
     gamesPlayed: ['Mahjong', 'Next Station: London']
   }
 ];
+
+export const MEETUPS: MeetupSession[] = sortMeetupsLatestFirst(INITIAL_MEETUPS);
+

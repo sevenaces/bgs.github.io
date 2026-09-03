@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useFirestoreData } from './lib/useFirestoreData';
+import { useLocalData } from './lib/useLocalData';
 import { initGA, trackPageView } from './lib/analytics';
 import { Header, TabType } from './components/Header';
 import { BottomNav } from './components/BottomNav';
@@ -57,7 +57,7 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const { games, meetups, isLoading } = useFirestoreData();
+  const { games, meetups, isLoading } = useLocalData();
 
   const filteredGames = games.filter(game => {
     if (searchQuery) {
