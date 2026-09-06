@@ -9,7 +9,7 @@ import { HomeView } from './components/HomeView';
 import { MeetupsView } from './components/MeetupsView';
 import { JoinDialog } from './components/JoinDialog';
 import { GameDetailDialog } from './components/GameDetailDialog';
-import { BoardGame } from './types';
+import { BoardGame, OwnerFilter } from './types';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabType>(() => {
@@ -23,6 +23,12 @@ export default function App() {
   const [selectedGame, setSelectedGame] = useState<BoardGame | null>(null);
 
   const [searchQuery, setSearchQuery] = useState('');
+  const [ownerFilter, setOwnerFilter] = useState<OwnerFilter>('all');
+
+  const handleResetFilters = () => {
+    setSearchQuery('');
+    setOwnerFilter('all');
+  };
 
   useEffect(() => {
     // Initialize Google Analytics if Measurement ID is set
@@ -64,6 +70,13 @@ export default function App() {
       const q = searchQuery.toLowerCase().trim();
       if (!game.name.toLowerCase().includes(q)) return false;
     }
+
+    if (ownerFilter === 'parag') {
+      if (!game.owner.toLowerCase().includes('parag')) return false;
+    } else if (ownerFilter === 'dharitri') {
+      if (!game.owner.toLowerCase().includes('dharitri')) return false;
+    }
+
     return true;
   }).sort((a, b) => a.name.localeCompare(b.name));
 
@@ -99,6 +112,8 @@ export default function App() {
             <FilterBar
               searchQuery={searchQuery}
               onSearchChange={setSearchQuery}
+              ownerFilter={ownerFilter}
+              onOwnerFilterChange={setOwnerFilter}
               totalGamesCount={games.length}
               filteredGamesCount={filteredGames.length}
             />
@@ -106,12 +121,12 @@ export default function App() {
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-8">
               {filteredGames.length === 0 ? (
                 <div className="text-center py-16 bg-neutral-50 rounded border border-neutral-200">
-                  <p className="text-sm font-medium text-neutral-600">No games found matching your search.</p>
+                  <p className="text-sm font-medium text-neutral-600">No games found matching your filters.</p>
                   <button
-                    onClick={() => setSearchQuery('')}
+                    onClick={handleResetFilters}
                     className="mt-3 px-4 py-2 bg-neutral-900 text-white rounded text-xs font-medium hover:bg-neutral-800 transition-colors cursor-pointer"
                   >
-                    Clear Search
+                    Clear All Filters
                   </button>
                 </div>
               ) : (
