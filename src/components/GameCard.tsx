@@ -10,10 +10,13 @@ export interface GameCardProps {
 }
 
 export function GameCard({ game, onSelectGame }: GameCardProps) {
-  const isParag = game.ownerType === 'parag';
-  const isDharitri = game.ownerType === 'dharitri';
+  const isMultiple = game.ownerType === 'multiple' || game.owner.includes('&');
+  const isParag = !isMultiple && (game.ownerType === 'parag' || game.owner.toLowerCase().includes('parag'));
+  const isDharitri = !isMultiple && (game.ownerType === 'dharitri' || game.owner.toLowerCase().includes('dharitri'));
 
-  const ownerDotColor = isParag
+  const ownerDotColor = isMultiple
+    ? 'bg-purple-600'
+    : isParag
     ? 'bg-neutral-900'
     : isDharitri
     ? 'bg-emerald-600'

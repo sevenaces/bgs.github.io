@@ -46,9 +46,9 @@ export function GameDetailModal({ game, onClose }: GameDetailModalProps) {
       >
         {/* Modal Header Image */}
         <div className="relative h-48 sm:h-56 bg-neutral-900 overflow-hidden flex items-center justify-center border-b border-neutral-200">
-          {game.image && !imgError ? (
+          {(game.thumbnail || game.image) && !imgError ? (
             <img
-              src={game.image}
+              src={game.thumbnail || game.image}
               alt={game.name}
               referrerPolicy="no-referrer"
               onError={() => setImgError(true)}

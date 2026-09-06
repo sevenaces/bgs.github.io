@@ -88,6 +88,15 @@ export function GameDetailDialog({ game, isOpen, onClose }: GameDetailDialogProp
                     </div>
                   );
                 })
+              ) : game.owner && game.owner.includes('&') ? (
+                game.owner.split('&').map((name, idx) => (
+                  <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-neutral-700 bg-neutral-50 p-2.5 rounded-lg border border-neutral-200">
+                    <MapPin className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>
+                      Play at: <strong className="font-semibold text-neutral-900">{name.trim()}</strong>
+                    </span>
+                  </div>
+                ))
               ) : (
                 <div className="flex items-center gap-2 text-xs sm:text-sm text-neutral-700 bg-neutral-50 p-2.5 rounded-lg border border-neutral-200">
                   <MapPin className="w-4 h-4 text-emerald-600 shrink-0" />
