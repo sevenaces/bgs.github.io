@@ -52,8 +52,7 @@ export function FilterBar({
           {/* Play at: Parag / Dharitri */}
           <div className="flex items-center gap-1.5 shrink-0" id="filter-play-at">
             <span className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">
-              Play at:
-            </span>
+              </span>
             <div className="inline-flex rounded-lg bg-neutral-100 p-0.5 border border-neutral-200/80">
               <button
                 type="button"
@@ -65,7 +64,7 @@ export function FilterBar({
                     : 'text-neutral-600 hover:text-neutral-900'
                 }`}
               >
-                All
+                Anywhere
               </button>
               <button
                 type="button"

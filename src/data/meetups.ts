@@ -27,7 +27,7 @@ export function parseMeetupDateToTimestamp(dateStr?: string, id?: string): numbe
       const day = parseInt(parts[0], 10);
       const monthStr = parts[1].toLowerCase().slice(0, 3);
       const month = MONTH_MAP[monthStr] ?? 0;
-      const year = parts[2] ? parseInt(parts[2], 10) : 2024;
+      const year = parts[2] ? parseInt(parts[2], 10) : 2026;
       return new Date(year, month, isNaN(day) ? 1 : day).getTime();
     }
   }
@@ -50,6 +50,22 @@ export function sortMeetupsLatestFirst(meetups: MeetupSession[]): MeetupSession[
 }
 
 export const INITIAL_MEETUPS: MeetupSession[] = [
+   {
+    id: 'meetup-2026-09-06',
+    date: '6 Sep',
+    time: '4:00 PM – 6:30 PM',
+    location: 'Kadhaigal Library',
+    locationUrl: 'https://maps.app.goo.gl/sNgssERsPkofSsYK9',
+    host: 'Parag',
+    description: `We served families mouthwatering street foods from the sensational "Khau Gali" of Ahmedabad, Delhi, Mumbai, Calcutta and Indore. 🥙🥙
+
+We avenged the director's death, by following ghostly visions to locate the murderer in "Mysterium Park" 👻🎡
+
+We frantically defused bombs, with mixed success in "Keep Talking and Nobody Explodes" 💣💥
+
+And lastly, we got uncomfortably competitive, acted like buffoons, and slapped the table in "Taco Cat Goat Cheese Pizza". 🌮😺🐐🧀🍕🦧🦄🦫`,
+    gamesPlayed: ['Taco Cat Goat Cheese Pizza', 'Keep Talking and Nobody Explodes', 'Mysterium Park']
+  },
   {
     id: 'meetup-2026-08-22',
     date: '22 Aug',
@@ -69,7 +85,7 @@ Ending the evening with a quick game of "Ultimate Werewolf".`,
     gamesPlayed: ['Just One', 'Keep Talking and Nobody Explodes', 'Mysterium Park', 'Ultimate Werewolf']
   },
   {
-    id: 'meetup-2024-08-20',
+    id: 'meetup-2026-08-20',
     date: '20 Aug',
     time: '7:00 PM – 10:30 PM',
     location: 'Dharitri Cafe',
@@ -89,7 +105,7 @@ And ended the night with a round of making the tastiest dishes in "Masala Lab"!
     gamesPlayed: ['Taco Cat Goat Cheese Pizza', 'Chatpate', 'Ultimate Werewolf', 'Trio', 'Masala Lab']
   },
   {
-    id: 'meetup-2024-08-14',
+    id: 'meetup-2026-08-14',
     date: '14 Aug',
     time: '4:00 PM – 6:30 PM',
     location: 'GWE, Hebbal',
@@ -100,7 +116,7 @@ We also spent some time with political intrigue, in a game of deception, lying a
     gamesPlayed: ['Clank!', 'Coup']
   },
   {
-    id: 'meetup-2024-08-09',
+    id: 'meetup-2026-08-09',
     date: '9 Aug',
     location: 'GWE, Hebbal',
     host: 'Parag',
@@ -108,7 +124,7 @@ We also spent some time with political intrigue, in a game of deception, lying a
     gamesPlayed: ['Keep Talking and Nobody Explodes', 'Mysterium Park']
   },
   {
-    id: 'meetup-2024-08-01',
+    id: 'meetup-2026-08-01',
     date: '1 Aug',
     location: 'Dharitri Cafe',
     locationUrl: 'https://maps.app.goo.gl/ycY4wVSU9cyQhRRM9',
@@ -116,7 +132,7 @@ We also spent some time with political intrigue, in a game of deception, lying a
     gamesPlayed: ['Loot', 'Codenames']
   },
   {
-    id: 'meetup-2024-07-25',
+    id: 'meetup-2026-07-25',
     date: '25 Jul',
     location: 'GWE, Hebbal',
     host: 'Shreya',

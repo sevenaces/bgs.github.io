@@ -89,7 +89,7 @@ export function HomeView({ meetups, onExploreGames, onOpenJoin, onExploreMeetups
 
           {/* Sunday */}
           <div className="bg-white rounded-lg border border-neutral-200 p-4 flex flex-col justify-between hover:border-neutral-300 transition-colors">
-            <h4 className="font-bold text-neutral-900 text-base">Sunday</h4>
+            <h4 className="font-bold text-neutral-900 text-base">Saturday</h4>
             <div className="mt-3 pt-3 border-t border-neutral-100 space-y-1 text-xs text-neutral-600">
               <div className="flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5 text-neutral-400" />
