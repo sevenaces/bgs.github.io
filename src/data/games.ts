@@ -996,5 +996,87 @@ export const GAMES: BoardGame[] = [
     "bggRating": 6.1,
     "videoUrl": "https://www.youtube.com/watch?v=g4boAtA9p3w",
     "source": "custom"
+  },
+  {
+    "id": "bomb-busters",
+    "name": "Bomb Busters",
+    "owner": "Parag",
+    "thumbnail": "/thumbnails/bomb-busters.png",
+    "minPlayers": 2,
+    "maxPlayers": 5,
+    "playingTime": 30,
+    "yearPublished": 2024,
+    "bggId": "413246",
+    "bggRating": 8,
+    "categories": [
+      "Standalone"
+    ],
+    "source": "custom"
+  },
+  {
+    "id": "everdell",
+    "name": "Everdell",
+    "owner": "Parag",
+    "thumbnail": "/thumbnails/everdell.png",
+    "minPlayers": 1,
+    "maxPlayers": 4,
+    "playingTime": 80,
+    "yearPublished": 2018,
+    "bggId": "199792",
+    "bggRating": 8,
+    "categories": [
+      "Standalone"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=qT3_Gipj71k",
+    "source": "custom"
+  },
+  {
+    "id": "maskmen",
+    "name": "Maskmen",
+    "owner": "Parag",
+    "thumbnail": "/thumbnails/maskmen.png",
+    "minPlayers": 2,
+    "maxPlayers": 6,
+    "playingTime": 20,
+    "yearPublished": 2014,
+    "bggId": "159581",
+    "bggRating": 6.9,
+    "categories": [
+      "Standalone"
+    ],
+    "source": "custom"
+  },
+  {
+    "id": "secret-hitler",
+    "name": "Secret Hitler",
+    "owner": "Parag",
+    "thumbnail": "/thumbnails/secret-hitler.jpg",
+    "minPlayers": 5,
+    "maxPlayers": 10,
+    "playingTime": 45,
+    "yearPublished": 2016,
+    "bggId": "188834",
+    "bggRating": 7.5,
+    "categories": [
+      "Standalone"
+    ],
+    "videoUrl": "https://www.youtube.com/watch?v=mbGXIDYbgcw",
+    "source": "custom"
+  },
+  {
+    "id": "yudhbhoomi",
+    "name": "Yudhbhoomi: An Indian Game of War",
+    "owner": "Parag",
+    "thumbnail": "/thumbnails/yudhbhoomi.jpg",
+    "minPlayers": 1,
+    "maxPlayers": 4,
+    "playingTime": 120,
+    "yearPublished": 2019,
+    "bggId": "299726",
+    "bggRating": 7.2,
+    "categories": [
+      "Standalone"
+    ],
+    "source": "custom"
   }
 ];
