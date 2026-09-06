@@ -90,10 +90,8 @@ export function GameCard({ game, onSelectGame }: GameCardProps) {
             {game.owners && game.owners.length > 1 ? (
               <div className="flex items-center gap-1.5 sm:gap-2 truncate">
                 {game.owners.map((o, idx) => {
-                  const dotColor = o.ownerType === 'parag' ? 'bg-neutral-900' : o.ownerType === 'dharitri' ? 'bg-emerald-600' : 'bg-purple-600';
                   return (
                     <span key={idx} className="inline-flex items-center gap-1 font-medium text-neutral-700 truncate">
-                      <span className={`w-1.5 h-1.5 rounded-full ${dotColor} shrink-0`} />
                       <span className="truncate">{o.name.replace(/\s*\(reachparag\)/i, '')}</span>
                     </span>
                   );
@@ -101,8 +99,7 @@ export function GameCard({ game, onSelectGame }: GameCardProps) {
               </div>
             ) : (
               <span className="inline-flex items-center gap-1.5 font-medium text-neutral-700 truncate">
-                <span className={`w-1.5 h-1.5 rounded-full ${ownerDotColor}`} />
-                <span className="truncate">{game.owner}</span>
+                <span className="truncate">Play at: {game.owner}</span>
               </span>
             )}
           </div>
