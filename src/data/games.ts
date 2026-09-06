@@ -28,6 +28,31 @@ export const GAMES: BoardGame[] = [
     "yearPublished": 2015
   },
   {
+    "minPlayers": 1,
+    "playingTime": 60,
+    "createdAt": "2026-08-24T09:37:08.347Z",
+    "owner": "Parag",
+    "owners": [
+      {
+        "ownerType": "parag",
+        "name": "Parag"
+      }
+    ],
+    "id": "heat",
+    "ownerType": "parag",
+    "name": "Heat: Pedal to the metal",
+    "categories": [
+      "Standalone"
+    ],
+    "source": "custom",
+    "thumbnail": "/thumbnails/heat.png",
+    "image": "/thumbnails/heat.png",
+    "maxPlayers": 6,
+    "bggId": "366013",
+    "bggRating": 8.0,
+    "yearPublished": 2022
+  },
+  {
     "categories": [
       "Expansion"
     ],
