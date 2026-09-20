@@ -50,6 +50,16 @@ export function sortMeetupsLatestFirst(meetups: MeetupSession[]): MeetupSession[
 }
 
 export const INITIAL_MEETUPS: MeetupSession[] = [
+  {
+    id: 'meetup-2026-09-13',
+    date: '13 Sep',
+    time: '4:00 PM – 6:30 PM',
+    location: 'Dharitri Cafe',
+    locationUrl: 'https://maps.app.goo.gl/ycY4wVSU9cyQhRRM9',
+    host: 'Parag',
+    description: `We served sumptuous street food to picky customers in "Khau Gali", and completed to make masterpiece art works to impress judges in "Canvas". To end the evening, we fought mexican masked wrestlers to determine who wins the tournament in "Maskmen"`,
+    gamesPlayed: ['Khau Gali', 'Maskmen', 'Canvas']
+  },
    {
     id: 'meetup-2026-09-06',
     date: '6 Sep',

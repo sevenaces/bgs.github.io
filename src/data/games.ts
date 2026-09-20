@@ -1,6 +1,20 @@
 import { BoardGame } from "../types";
 
 export const GAMES: BoardGame[] = [
+    {
+      "id": "khau-gali",
+      "name": "Khau Gali",
+      "owner": "Parag",
+      "thumbnail": "/thumbnails/khaugali.jpeg",
+      "minPlayers": 2,
+      "maxPlayers": 4,
+      "playingTime": 30,
+      "yearPublished": "Upcoming",
+      "categories": [
+        "Standalone"
+      ],
+      source: "custom"
+    },
   {
     "id": "7-wonders-duel",
     "name": "7 Wonders Duel",
