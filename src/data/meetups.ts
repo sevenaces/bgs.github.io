@@ -74,7 +74,7 @@ We avenged the director's death, by following ghostly visions to locate the murd
 We frantically defused bombs, with mixed success in "Keep Talking and Nobody Explodes" 💣💥
 
 And lastly, we got uncomfortably competitive, acted like buffoons, and slapped the table in "Taco Cat Goat Cheese Pizza". 🌮😺🐐🧀🍕🦧🦄🦫`,
-    gamesPlayed: ['Taco Cat Goat Cheese Pizza', 'Keep Talking and Nobody Explodes', 'Mysterium Park']
+    gamesPlayed: ['Khau Gali', 'Taco Cat Goat Cheese Pizza', 'Keep Talking and Nobody Explodes', 'Mysterium Park']
   },
   {
     id: 'meetup-2026-08-22',
